@@ -39,9 +39,9 @@ if not os.path.isdir('Pileup'):
 # Rename the output files for 2017 samples (for the SpecialPUCalculation); the output file name should be one of the branch names from PileUp/new_mc2017_pileupReweighting_NanoAODv6.root
 if configDic['year'] == 2017 and not 'data' in datafile:
     if '_TuneCP5' in datafile:
-        configDic['outname'] = (datafile.split('/')[5]).split('_Tune')[0] + '.root'
+        configDic['outname'] = (datafile.split('/')[5]).split('_Tune')[0] + '_Tune.root'
     elif '_13TeV' in datafile:
-        configDic['outname'] = (datafile.split('/')[5]).split('_13TeV')[0] + '.root'
+        configDic['outname'] = (datafile.split('/')[5]).split('_13TeV')[0] + '_13TeV.root'
     
 runcode = '$CMSSW_BASE/src/NanoAOD_Analyzer/Analyzer -out {outname} -y {year} -C {PartDet} -in {datafile} '.format(**configDic)
 print(runcode)
