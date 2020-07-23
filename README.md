@@ -4,8 +4,8 @@ https://gitlab.sscc.uos.ac.kr/analysis/vbfsusy
 
 # PartDets
 Config files for wjets and zjets background estimation, respectively
-- **CR1** CENTRAL: Central selections + Vetoes
-- **CR2** VBF: Central selections + VBF + Vetoes
+- **CR1)** CENTRAL: Central selections + Vetoes
+- **CR2)** CENTRAL + VBF: Central selections + VBF + Vetoes
 
 In every CR,
 
