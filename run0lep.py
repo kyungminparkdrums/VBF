@@ -1,8 +1,8 @@
 #!/bin/env python
-
-configDic = {'PartDet':'zjets', 'year': 2016}
-
 import os,sys
+
+partDetDir = '$CMSSW_BASE/src/vbfsusy/PartDets/2016/W_CR1/'
+configDic = {'PartDet':partDetDir+'wjets', 'year': 2016}
 
 datafile = sys.argv[1]
 configDic['datafile'] = datafile
