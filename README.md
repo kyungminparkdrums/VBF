@@ -2,7 +2,7 @@
 for uos gitlab users, 
 https://gitlab.sscc.uos.ac.kr/analysis/vbfsusy
 
-# wjets, wjets_data, wjets_htfilter / zjets, zjets_data, zjets_htfilter
+# PartDets
 Config files for wjets and zjets background estimation, respectively
 - wjets and zjets: for mc files except for inclusive DY and Wjets
 - wjets_htfilter and zjets_htfilter: for inclusive DY and Wjets. We turn on the ht filter from 0 to 100, so that the output file can mimick ht binned from 0 to 100, which we are missing.
