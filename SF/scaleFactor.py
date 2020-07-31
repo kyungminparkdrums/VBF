@@ -4,7 +4,7 @@ from math import sqrt
 
 # parse the cutflow .txt file in the latex form and get the event numbers and uncertainties 
 if len(sys.argv) != 3:
-    print("Run this code by -> python <this code> <cutflow.txt in latex form> <W or DY>")
+    print("Run this code by -> python <this code> <cutflow.txt in latex form> <bg, i.e. 'W'>")
 
 
 # function that gets the scale factor and its error corresponding to the cut whose name is given as a parameter
@@ -37,33 +37,16 @@ def getScaleFactors(bg='W', cut='name of the cut'):
     delta_nProcess = delta_nNonProcess = 0.
     delta_nNonProcess_squared = 0.
 
-    if bg == 'W':
-        for key, value in eventDic.items():
-            #print("{}: {} +/- {}".format(key, value[0], value[1]))
-            if key == 'Data':
-                nData += value[0]
-            elif key == 'WJets':
-                nProcess += value[0]
-                delta_nProcess += value[1]
-            else:
-                nNonProcess += value[0]
-                delta_nNonProcess_squared += value[1]**2
-
-    elif bg == 'DY':
-         for key, value in eventDic.items():
-            #print("{}: {} +/- {}".format(key, value[0], value[1]))
-            if key == 'Data':
-                nData += value[0]
-            elif key == 'DYJets':
-                nProcess += value[0]
-                delta_nProcess += value[1]
-            else:
-                nNonProcess += value[0]
-                delta_nNonProcess_squared += value[1]**2
-
-    else:
-        print('bg should be either "W" or "DY". ')
- 
+    for key, value in eventDic.items():
+       #print("{}: {} +/- {}".format(key, value[0], value[1]))
+       if key == 'Data':
+            nData += value[0]
+       elif bg in key:
+            nProcess += value[0]
+            delta_nProcess += value[1]
+       else:
+            nNonProcess += value[0]
+            delta_nNonProcess_squared += value[1]**2
 
     delta_nNonProcess = sqrt(delta_nNonProcess_squared)
 
@@ -107,7 +90,7 @@ def saveSF(year=2016, bg='W', cut='name of the cut'):
 
 # main func
 if __name__ == '__main__':
-    bg = sys.argv[2]   #  either W or DY
+    bg = sys.argv[2]   # i.e. W
     
     cutList = [ 'Trigger', 'Muon', 'MET', 'DiJet', 'Tau', 'BJet' ]
     print('\n')
