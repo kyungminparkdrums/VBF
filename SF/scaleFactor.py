@@ -92,17 +92,21 @@ def saveSF(year=2016, bg='W', cut='name of the cut'):
 if __name__ == '__main__':
     bg = sys.argv[2]   # i.e. W
     
-    cutList = [ 'Trigger', 'Muon', 'MET', 'DiJet', 'Tau', 'BJet' ]
+    if 'W' in bg:
+        cutList = [ 'Trigger', 'Muon1', 'MET', 'DiJet', 'Tau', 'BJet' ]
+    elif 'DY' in bg:
+        cutList = [ 'Trigger', 'Muon1', 'DiMuon', 'MET', 'DiJet', 'Tau', 'BJet' ]
+
     print('\n')
     for cut in cutList:
         if cut == 'DiJet' and 'CR1' in sys.argv[1]:
             continue
-        print('{} step {}-SF: {:.3f} $\pm$ {:.3f}'.format(cut, bg, getScaleFactors(bg, cut)[0], getScaleFactors(bg,cut)[1]))
+        print('{} step {}-SF: {:.3f} $\pm$ {:.4f}'.format(cut, bg, getScaleFactors(bg, cut)[0], getScaleFactors(bg,cut)[1]))
     
     if '2016' in sys.argv[1]:
         year = 2016
     elif '2017' in sys.argv[1]:
-        year = 2016
+        year = 2017
     elif '2018' in sys.argv[1]:
-        year = 2016
+        year = 2018
     saveSF(year, bg, 'BJet')
