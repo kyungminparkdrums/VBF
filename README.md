@@ -13,5 +13,5 @@ In each CR folder,
 - wjets_htfilter and zjets_htfilter: for inclusive DY and Wjets. We turn on the ht filter from 0 to 100, so that the output file can mimick ht binned from 0 to 100, which we are missing.
 - wjets_data and zjets_data: for running data. It is important to note that the output file name should specify the year and the version of the data, i.e. "SingleMuon_2016B.root" 
 
-**run0lep.py** and **batch_201*.py** will automatically do these for you. Just edit the config files as you need them to be.
+**run0lep.py** and **batch.py** will automatically do these for you. Just edit the config files as you need them to be.
 
