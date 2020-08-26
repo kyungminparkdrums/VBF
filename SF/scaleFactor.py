@@ -75,17 +75,19 @@ def getScaleFactors(bg='W', cut='name of the cut'):
 # save the sf and its error as a txt file
 def saveSF(year=2016, bg='W', cut='name of the cut'):
     outfile_name = 'SF.txt'
+    outfile_dir = './SF_Output/'
+
     if 'CR1' in sys.argv[1]:
         outfile_name = '{}_SF_{}_Central.txt'.format(year, bg)
     elif 'CR2' in sys.argv[1]:
         outfile_name = '{}_SF_{}_Central+VBF.txt'.format(year, bg)
 
-    if os.path.exists(outfile_name):
-        os.remove(outfile_name)
+    if os.path.exists(outfile_dir+outfile_name):
+        os.remove(outfile_dir+outfile_name)
 
-    outfile = open(outfile_name, 'a')
+    outfile = open(outfile_dir+outfile_name, 'a')
     outfile.write(str(getScaleFactors(bg, cut)[0])+' $\pm$ '+str(getScaleFactors(bg, cut)[1]))
-    print("\nSaved: {}\n".format(outfile_name))
+    print("\nSaved: {}\n".format(outfile_dir+outfile_name))
 
 
 # main func
