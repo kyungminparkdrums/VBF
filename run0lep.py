@@ -13,8 +13,8 @@ run0lep.py /hdfs/store/mc/RunIISummer16NanoAODv6-largeblock/WJetsToLNu_TuneCUETP
 
 '''
 
-partDetDir = '$CMSSW_BASE/src/vbfsusy/PartDets/2017/W_CR2/'
-configDic = {'PartDet':partDetDir+'wjets', 'year': 2017}
+partDetDir = '$CMSSW_BASE/src/vbfsusy/PartDets/2018/Z_CR2/'
+configDic = {'PartDet':partDetDir+'zjets', 'year': 2018}
 
 datafile = sys.argv[1]
 configDic['datafile'] = datafile
@@ -44,6 +44,10 @@ if configDic['year'] == 2017 and not 'data' in datafile:
         configDic['outname'] = (datafile.split('/')[5]).split('_13TeV')[0] + '_13TeV.root'
     
 runcode = '$CMSSW_BASE/src/NanoAOD_Analyzer/Analyzer -out {outname} -y {year} -C {PartDet} -in {datafile} '.format(**configDic)
+
+if len(sys.argv) == 3 and '-t' in sys.argv[2]:
+    runcode += ' -t'
+
 print(runcode)
 os.system(runcode)
 
