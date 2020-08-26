@@ -3,7 +3,7 @@ For UOS gitlab,
 https://gitlab.sscc.uos.ac.kr/analysis/vbfsusy
 
 # Batch
-Batch submitting code with `run0lep.py` and `hadoopCondorSubmit.py` for UOS gate users (2016 - 2018)
+Batch submitting code (2016 - 2018) with `run0lep.py` and `hadoopCondorSubmit.py` for UOS gate users
 
 # PartDets
 Config files for wjets and zjets background estimation, respectively
