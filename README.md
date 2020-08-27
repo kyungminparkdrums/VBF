@@ -21,7 +21,7 @@ In each CR folder,
 # SF
 From the cutflow output from the Plotter, get scale factors for W or  Z for each step.
 
-# SamplesXsecs
+# PlotterConfigs
 Config for the Plotter
 
 # run0lep.py
