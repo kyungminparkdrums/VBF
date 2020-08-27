@@ -2,9 +2,23 @@ import sys
 import os
 from math import sqrt
 
+'''
+Usage:
+1. Make sure you have cutflow output txt file from Plotter whose name specifies CR1 or CR2
+2. Run the code by 
+python3 scaleFactor.py <cutflow txt file> <bg: 'W' or 'DY'>
+i.e, python3 scaleFactor.py Cutflow_from_Plotter/cutflow_2016_Z_CR1.txt DY
+3. Scale factor for following steps will be printed
+CR1) Trigger, Muon Selection, MET, Lepton Veto(after Tau veto), BJet Veto
+CR2) Trigger, Muon Selection, MET, VBF Cuts, Lepton Veto(after Tau Veto), BJet Veto
+4. Scale factor from the CR (after BJet Veto) will be saved in ./SF_Output
+
+'''
+
+
 # parse the cutflow .txt file in the latex form and get the event numbers and uncertainties 
 if len(sys.argv) != 3:
-    print("Run this code by -> python <this code> <cutflow.txt in latex form> <bg, i.e. 'W'>")
+    print("Run this code by -> python <this code> <cutflow.txt in latex form> <bg, i.e. 'W' or 'DY'>")
 
 
 # function that gets the scale factor and its error corresponding to the cut whose name is given as a parameter
@@ -92,7 +106,7 @@ def saveSF(year=2016, bg='W', cut='name of the cut'):
 
 # main func
 if __name__ == '__main__':
-    bg = sys.argv[2]   # i.e. W
+    bg = sys.argv[2]   # i.e. W or DY
     
     if 'W' in bg:
         cutList = [ 'Trigger', 'Muon1', 'MET', 'DiJet', 'Tau', 'BJet' ]
