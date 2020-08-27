@@ -1,7 +1,7 @@
 luminosity 35920
 
 ## Data
-SingleMuon Run2016[B-H] Nano25Oct2019-v1 (C-H) / Nano25Oct2019_ver1-v1 (B_ver1) / Nano25Oct2019_ver1-v1 (B_ver2)
+SingleMuon Run2016[B-H]  Nano25Oct2019_ver1-v1 (B_ver1) / Nano25Oct2019_ver2-v1 (B_ver2) / Nano25Oct2019-v1 (C-H)
 
 ## MC RunIISummer16NanoAODv6 ( Sample/  Xsec )
 
