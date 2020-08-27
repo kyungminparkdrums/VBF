@@ -5,7 +5,7 @@ import sys, os
 
 Merge output root files
 Specify the directory where your output files are stored, i.e. /home/scratch/kmpark/zjets/
-Only thing you'll need to change is line #10 pstored value
+Only thing you'll need to change is line #12 pstored value
 
 '''
 
