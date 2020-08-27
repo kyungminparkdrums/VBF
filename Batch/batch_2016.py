@@ -53,7 +53,7 @@ mcList = [
            'WJetsToLNu_TuneCUETP8M1_13TeV-madgraphMLM-pythia8', 
 
            # QCD
-           'QCD_HT50to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8', 
+           # 'QCD_HT50to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8', 
            'QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8', 
            'QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8', 
            'QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8', 
