@@ -48,6 +48,10 @@ mcList = [
            'EWKWMinus2Jets_WToLNu_M-50_TuneCP5_13TeV-madgraph-pythia8',
            'EWKWPlus2Jets_WToLNu_M-50_TuneCP5_13TeV-madgraph-pythia8',           
 
+           # inclusive DY and WJets
+           'DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8',
+           'WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8',
+
            # QCD
            'QCD_HT100to200_TuneCP5_13TeV-madgraphMLM-pythia8',
            'QCD_HT200to300_TuneCP5_13TeV-madgraphMLM-pythia8',
@@ -80,26 +84,11 @@ mcList = [
            'ZZTo2L2Nu_TuneCP5_13TeV_powheg_pythia8',
            'ZZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8',
            'ZZTo2Q2Nu_TuneCP5_13TeV_amcatnloFXFX_madspin_pythia8',
-           'ZZTo4L_13TeV_powheg_pythia8_TuneCP5',
-
-           # inclusive DY and WJets
-           'DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8',
-           'WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8'
+           'ZZTo4L_13TeV_powheg_pythia8_TuneCP5'
 ]
 
-for i in mcList:
-    os.system('mkdir -p {}'.format(outDir+i))
-    mcJobDic = {'executedCode':executableCode, 'jobName':i, 'outputFile':i+'.root', 'inputFile':mcDir+i, 'outputDir':outDir+i}
-    # Rename the output files for 2017 samples (for the SpecialPUCalculation); the output file name should be one of the branch names from PileUp/new_mc2017_pileupReweighting_NanoAODv6.root
-    #if '_TuneCP5' in i:
-    #    mcJobDic['outputFile'] = i.split('_TuneCP5')[0] + '_TuneCP5.root'
-    #elif '_13TeV' in i:
-    #    mcJobDic['outputFile'] = i.split('_13TeV')[0] + '_13TeV.root'
-    runCode = '~/cpluostools/hadoopCondorSubmit.py {jobName} -e {executedCode} -o {outputFile} -d {inputFile} --outputdir {outputDir}'.format(**mcJobDic)
-    print(runCode)
-    os.system(runCode)
 
-
+# Run over data
 for i in dataList:
     dataName = 'SingleMuon_Run2018{}'.format(i)
     dataVersion = 'Nano25Oct2019-v1'    
@@ -110,3 +99,11 @@ for i in dataList:
     print(runCode)
     os.system(runCode)
 
+
+# Run over MC
+for i in mcList:
+    os.system('mkdir -p {}'.format(outDir+i))
+    mcJobDic = {'executedCode':executableCode, 'jobName':i, 'outputFile':i+'.root', 'inputFile':mcDir+i, 'outputDir':outDir+i}
+    runCode = '~/cpluostools/hadoopCondorSubmit.py {jobName} -e {executedCode} -o {outputFile} -d {inputFile} --outputdir {outputDir}'.format(**mcJobDic)
+    print(runCode)
+    os.system(runCode)
