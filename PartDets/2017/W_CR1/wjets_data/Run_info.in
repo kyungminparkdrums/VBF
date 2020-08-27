@@ -18,6 +18,8 @@ ApplyTauIDSF false
 UsePileUpWeight true
 ApplyZBoostSF false
 
+ApplyZpTSF false
+
 isData true
 ApplyGenWeight  true
 
@@ -37,8 +39,8 @@ GenDilepMassRange 80.0 100.0
 
 /// ------ Triggers ----- ///
 
-Trigger1FirstRequirement HLT_IsoMu24
-Trigger1SecondRequirement HLT_IsoMu24
+Trigger1FirstRequirement HLT_IsoMu27
+Trigger1SecondRequirement HLT_IsoMu27
 UseTriggerWildcard false
 
 /// Trigger2FirstRequirement HLT_DoubleMediumIsoPFTau35_Trk1_eta2p1_Reg

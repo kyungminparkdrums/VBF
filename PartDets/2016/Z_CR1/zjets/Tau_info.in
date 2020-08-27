@@ -98,13 +98,13 @@ DzCutThreshold 0.2
 DoDiscrByLeadTrack false
 LeadTrackThreshold 5.0
 
-DoDiscrByIsolation false
+DoDiscrByIsolation true
 // MVA: 1 = VVLoose, 2 = VLoose, 4 = Loose, 8 = Medium, 16 = Tight, 32 = VTight, 64 = VVTight
 // DeepTau: 1 = VVVLoose, 2 = VVLoose, 4 = VLoose, 8 = Loose, 16 = Medium, 32 = Tight, 64 = VTight, 128 = VVTight
-DiscrByMinIsolation 16
+DiscrByMinIsolation 32
 DiscrByMaxIsolation 2
 FlipIsolationRequirement false
-DiscrByProngType false
+DiscrByProngType true
 ProngType  1hps
 decayModeFindingNewDMs false
 decayModeFinding false

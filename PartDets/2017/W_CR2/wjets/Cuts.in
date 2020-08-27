@@ -31,27 +31,27 @@ NGenHiggs	0  -1
 NGenTau		0  -1
 
 ***NRecoVertex        1   -1        /// at least one good vertex
-***NRecoTriggers1     1   -1        /// events must fire the HLT_IsoMu24 trigger
-***NRecoMuon1	      1    1        /// CR1) Muon selection
-***METCut	      	  1   -1        /// CR2) MET cut 
-***NRecoJet1	      1   -1        /// CR1) Jets definition
-***NRecoJet2	      2   -1        /// Jet1 and Jet2 definitions are the same 
-***NDiJetCombinations 1   -1        /// CR3) VBF cuts
-***NRecoElectron1     0    0        /// CR1) Electron veto
-***NRecoTau1	      0    0        /// CR1) Tau veto
-***NRecoBJet	      0    0        /// CR1) BJet veto
-NRecoElectron2	      0   -1        /// Electrons that are not vetoed: we are using them for overlap removal in Tau veto
+***NRecoTriggers1     1   -1        /// events must fire the HLT_IsoMu27 trigger
+***NRecoMuon1	      1    1        /// Muon selection
+***METCut	      1   -1        /// MET cut 
+***NRecoJet1	      1   -1        /// VBF) Jets definition
+***NRecoJet2	      2   -1        /// VBF) Jet1 and Jet2 definitions are the same 
+***NDiJetCombinations 1   -1        /// VBF) VBF cuts
+***NRecoElectron1     0    0        /// Electron veto
+***NRecoTau1	      0    0        /// Tau veto
+***NRecoBJet	      0    0        /// BJet veto
+NRecoElectron2	      0   -1        /// Electrons not vetoed: used for overlap removal in Tau veto
 NRecoMuon2	      0   -1        /// Muon1 and Muon2 definitions are the same
-NRecoTau2	      0    -1        /// Tau1 and Tau2 definitions are the same
-NDiMuonCombinations   0   -1     /// N(mu) >= 2, M(dimu) cut
-NRecoCentralJet       0   -1        /// NEED TO CHECK!
+NRecoTau2	      0   -1        /// Tau1 and Tau2 definitions are the same
+NDiMuonCombinations   0   -1     
+NRecoCentralJet       0   -1       
 NRecoTriggers2	      0   -1           ///only 0 or 1
-NRecoSecondLeadingJet 0   -1    ///only 0 or 1
+NRecoSecondLeadingJet 0   -1           ///only 0 or 1
 NDiElectronCombinations	   0   -1
 NDiTauCombinations	   0   -1
-NRecoFirstLeadingJet       0   -1   ///only 0 or 1  
-NRecoSecondLeadingJet 	   0   -1    ///only 0 or 1
-NLeadJetCombinations       0   -1   ///only 0 or 1
+NRecoFirstLeadingJet       0   -1      ///only 0 or 1  
+NRecoSecondLeadingJet 	   0   -1      ///only 0 or 1
+NLeadJetCombinations       0   -1      ///only 0 or 1
 NMuon1Tau1Combinations        0   -1
 NMuon1Tau2Combinations 	      0   -1
 NMuon2Tau1Combinations 	      0   -1

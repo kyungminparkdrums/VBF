@@ -136,6 +136,7 @@ FirstLeadingMuon1Pt     400   0.    1000.
 FirstLeadingMuon1Eta    144  -7.2     +7.2
 Muon1Phi                 36  -3.15    +3.15
 Muon1MetMt              100   0      500
+Muon1MetMtOriginal      100   0      500
 
 FillMuon2 1
 
@@ -273,6 +274,7 @@ DiMuonPZetaVis                 100     0      100
 DiMuonZeta1D                   150  -300      300
 DiMuonNotReconstructableMass   600     0     1500
 DiMuonReconstructableMass      600     0     1500
+DiMuonPt                       1000    0     5000
 
 Muon1PtVsMuon2Pt                 100  0  500     100     0    500
 DiMuonZeta2D                     100  0  100     200  -100    100
