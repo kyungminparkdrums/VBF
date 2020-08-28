@@ -1,5 +1,5 @@
 # Batch
-Batch submitting code (2016 - 2018) with `run0lep.py` and `hadoopCondorSubmit.py` for UOS gate users
+Batch submitting code (2016 - 2018) with `run0lep.py` and `hadoopCondorSubmit.py` in UOS gate server
 
 # PartDets
 Config files for wjets and zjets background estimation, respectively
