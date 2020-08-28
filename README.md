@@ -1,6 +1,5 @@
 # VBF
-For UOS gitlab, 
-https://gitlab.sscc.uos.ac.kr/analysis/vbfsusy
+VBF 0 lepton
 
 # Batch
 Batch submitting code (2016 - 2018) with `run0lep.py` and `hadoopCondorSubmit.py` for UOS gate users
