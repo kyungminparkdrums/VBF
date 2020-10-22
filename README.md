@@ -14,23 +14,16 @@ In each CR folder,
 
 `run0lep.py` and `batch.py` will automatically do things for you. Just edit the config files as you need them to be.
 
+# RunAnalyzer
+`python3 run0lep_2016.py [sample]`
+
 # SF
 From the cutflow output from the Plotter, get scale factors for W or Z for each step.
 
-# PlotterConfig
+`python3 calculateSF.py 2016_Z_CR1_cutflow.txt DY+Jets`
+
+# SamplesXsec
 Config for the Plotter
 
-# run0lep.py
-* Inside the `run0lep.py`, change `PartDet` and `year` in line #16-17.
-* Then, simply run **`python3 run0lep.py <input file>`**
-
-```shell
-# Data
-python3 run0lep.py /hdfs/store/data/Run2016C/SingleMuon/NANOAOD/Nano1June2019-v1/30000/F67E58A1-F245-984D-8953-BEB8ECD16B84.root
-
-# TTbar mc sample
-python3 run0lep.py /hdfs/store/mc/RunIISummer16NanoAODv6/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/NANOAODSIM/PUMoriond17_Nano25Oct2019_102X_mcRun2_asymptotic_v7-v2/20000/7378B9CD-404E-B045-9E05-E261D30BC883.root
-
-# Inclusive WJets mc sample
-python3 run0lep.py /hdfs/store/mc/RunIISummer16NanoAODv6/WJetsToLNu_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/NANOAODSIM/PUMoriond17_Nano25Oct2019_102X_mcRun2_asymptotic_v7-v1/270000/0F95EA56-FF3C-A940-A3F7-0BABD701D91D.root
-```
+# hadd
+hadd/merge outputs
