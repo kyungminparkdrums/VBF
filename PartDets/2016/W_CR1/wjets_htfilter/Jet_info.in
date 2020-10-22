@@ -37,6 +37,9 @@ RemoveOverlapWithTau2s 0
 Tau1MatchingDeltaR  0.3
 Tau2MatchingDeltaR 0.3
 
+RemoveOverlapWithJs 0
+JMatchingDeltaR 0.8
+
 RemoveOverlapWithBs 0
 BJMatchingDeltaR 0.3
 
@@ -66,6 +69,9 @@ RemoveOverlapWithTau1s 0
 RemoveOverlapWithTau2s 0
 Tau1MatchingDeltaR  0.3
 Tau2MatchingDeltaR 0.3
+
+RemoveOverlapWithJs 0
+JMatchingDeltaR 0.8
 
 RemoveOverlapWithBs 0
 BJMatchingDeltaR 0.3

@@ -1,6 +1,6 @@
 ////////////////////// Cuts ///////////////
 
-//// W -> lv where l is not identified. 
+//// WJets to lnu (l not identified)
 
 //// This file gives all of the multiplicity cuts that are made in the code.  The order of the cuts can be changed
 //// 
@@ -32,18 +32,18 @@ NGenTau		0  -1
 
 ***NRecoVertex        1   -1        /// at least one good vertex
 ***NRecoTriggers1     1   -1        /// events must fire the HLT_IsoMu24 trigger
-***NRecoMuon1	      1    1        /// Muon selection
-***METCut	      1   -1        /// MET cut 
-***NRecoJet1	      1   -1        /// VBF) Jets definition 
-***NRecoJet2	      2   -1        /// VBF) Jet1 and Jet2 definitions are the same 
-***NDiJetCombinations 1   -1        /// VBF cuts
+***NRecoMuon1	      1    1        /// Muon selection 
+***NRecoMuon2	      0    0        /// Muon veto for pT > 10 GeV
+***METCut	      1   -1        /// MET cut
+***NRecoJet1	      1   -1        /// 
+***NRecoJet2	      2   -1        /// 
+***NDiJetCombinations 1   -1        /// 
 ***NRecoElectron1     0    0        /// Electron veto
 ***NRecoTau1	      0    0        /// Tau veto
-***NRecoBJet	      0    0        /// BJet veto
+***NRecoBJet	      0    0        /// BJet veto 
 NRecoElectron2	      0   -1        /// Electrons not vetoed: used for overlap removal in Tau veto
-NRecoMuon2	      0   -1        /// Muon1 and Muon2 definitions are the same
 NRecoTau2	      0   -1        /// Tau1 and Tau2 definitions are the same
-NDiMuonCombinations   0   -1    
+NDiMuonCombinations   1   -1     /// Muon selection: Dimuon cut
 NRecoCentralJet       0   -1        
 NRecoTriggers2	      0   -1           ///only 0 or 1
 NRecoSecondLeadingJet 0   -1           ///only 0 or 1

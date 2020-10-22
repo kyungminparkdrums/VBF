@@ -18,8 +18,8 @@ UseMotherID 0
 MotherID 23.0
 doEfficiencyPlots true
 
-////////////////////////////////  
-             Muon1            
+////////////////////////////////
+             Muon1
 ///////////////////////////////
 
 //----RECO CUTS----//
@@ -44,13 +44,13 @@ DiscrByMetMt 1
 MetMtCut 50. 100.
 
 ////////////////////////////////
-             Muon2            
+             Muon2
 ///////////////////////////////
 
 //----RECO CUTS----//
 
 EtaCut 2.1
-PtCut 30.0 9999.9
+PtCut 10.0 30.0
 
 DoDiscrByTightID 1
 DoDiscrBySoftID 0
@@ -65,5 +65,5 @@ DiscrIfIsZdecay 0
 DiscrByMetDphi 0
 MetDphiCut 1.0 3.15
 
-DiscrByMetMt 1
-MetMtCut 50.0 100.0
+DiscrByMetMt 0
+MetMtCut 50. 100.

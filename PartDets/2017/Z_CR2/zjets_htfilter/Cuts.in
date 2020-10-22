@@ -35,9 +35,9 @@ NGenTau		0  -1
 ***NRecoMuon1	      2   -1        /// Muon selection 
 ***NDiMuonCombinations   1   -1     /// Muon selection: Dimuon cut
 ***METCut	      1   -1        /// MET cut
-***NRecoJet1	      1   -1        /// VBF) Jets definition
-***NRecoJet2	      2   -1        /// VBF) Jet1 and Jet2 definitions are the same
-***NDiJetCombinations 1   -1        /// VBF) VBF cuts 
+***NRecoJet1	      1   -1        /// 
+***NRecoJet2	      2   -1        /// 
+***NDiJetCombinations 1   -1        /// 
 ***NRecoElectron1     0    0        /// Electron veto
 ***NRecoTau1	      0    0        /// Tau veto
 ***NRecoBJet	      0    0        /// BJet veto 
