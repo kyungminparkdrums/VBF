@@ -2,10 +2,10 @@
          Muon1Tau1
 #############################
 
-DiscrByDeltaR  1
+DiscrByDeltaR  0
 DeltaRCut      0.3 
 
-DiscrByOSLSType  LS
+DiscrByOSLSType  No
 
 DiscrByCosDphi	 0				# dPhi is calculated between Muon1 and Tau1 
 CosDphiCut 	 -1.00   -0.95
@@ -13,7 +13,7 @@ CosDphiCut 	 -1.00   -0.95
 DiscrByCosDphi_DeltaPtAndMet   false
 CosDphi_DeltaPtMetCut  0.8  1.0
 
-DiscrByMassReco  1
+DiscrByMassReco  0
 HowCalculateMassReco none     ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
 MassCut          0.0   100.0
 
@@ -48,10 +48,10 @@ DiLeadMassDeltaPtCut   0.0   9000.0
            Muon1Tau2
 ##############################
 
-DiscrByDeltaR  1
+DiscrByDeltaR  0
 DeltaRCut      0.3 
 
-DiscrByOSLSType  LS
+DiscrByOSLSType No
 
 DiscrByCosDphi	 0			# dPhi is calculated between Muon1 and Tau2
 CosDphiCut 	 -1.00   -0.95
@@ -59,7 +59,7 @@ CosDphiCut 	 -1.00   -0.95
 DiscrByCosDphi_DeltaPtAndMet   false
 CosDphi_DeltaPtMetCut  0.8  1.0
 
-DiscrByMassReco  1
+DiscrByMassReco  0
 HowCalculateMassReco none     ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
 MassCut          0.0   100.0
 
@@ -94,10 +94,10 @@ DiLeadMassDeltaPtCut   0.0   9000.0
               Muon2Tau1
 ###################################
 
-DiscrByDeltaR  1
+DiscrByDeltaR  0
 DeltaRCut      0.3 
 
-DiscrByOSLSType  LS
+DiscrByOSLSType  No
 
 DiscrByCosDphi	 0				# dPhi is calculated between Muon2 and Tau1
 CosDphiCut 	 -1.00   -0.95
@@ -105,7 +105,7 @@ CosDphiCut 	 -1.00   -0.95
 DiscrByCosDphi_DeltaPtAndMet   false
 CosDphi_DeltaPtMetCut  0.8  1.0
 
-DiscrByMassReco  1
+DiscrByMassReco  0
 HowCalculateMassReco none     ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
 MassCut          0.0   100.0
 
@@ -140,10 +140,10 @@ DiLeadMassDeltaPtCut   0.0   9000.0
         Muon2Tau2
 ########################
 
-DiscrByDeltaR  1
+DiscrByDeltaR  0
 DeltaRCut      0.3 
 
-DiscrByOSLSType  LS
+DiscrByOSLSType  No
 
 DiscrByCosDphi	 0			# dPhi is calculated between Muon2 and Tau2
 CosDphiCut 	 -1.00   -0.95
@@ -151,7 +151,7 @@ CosDphiCut 	 -1.00   -0.95
 DiscrByCosDphi_DeltaPtAndMet   false
 CosDphi_DeltaPtMetCut  0.8  1.0
 
-DiscrByMassReco  1
+DiscrByMassReco  0
 HowCalculateMassReco none     ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
 MassCut          0.0   100.0
 
