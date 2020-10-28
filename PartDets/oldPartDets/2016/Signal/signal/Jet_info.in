@@ -1,0 +1,192 @@
+########################################
+	        Smear
+#######################################
+
+SmearTheJet 1
+JetEnergyScaleOffset 0.3
+
+GenMatchingDeltaR 0.4
+MuonMatchingDeltaR  0.3
+ElectronMatchingDeltaR  0.3
+TauMatchingDeltaR  0.3
+
+
+
+########################################
+               Jet1
+#######################################
+
+EtaCut 0. 5.0
+PtCut 60.0
+
+ApplyLooseID 1
+ApplyTightID 0
+
+RemoveOverlapWithMuon1s 1
+RemoveOverlapWithMuon2s 1
+Muon1MatchingDeltaR  0.4
+Muon2MatchingDeltaR  0.4
+
+RemoveOverlapWithElectron1s 0
+RemoveOverlapWithElectron2s 0
+Electron1MatchingDeltaR  0.3
+Electron2MatchingDeltaR  0.3
+
+RemoveOverlapWithTau1s 0
+RemoveOverlapWithTau2s 0
+Tau1MatchingDeltaR  0.3
+Tau2MatchingDeltaR 0.3
+
+RemoveOverlapWithBs 0
+BJMatchingDeltaR 0.3
+
+Apply2017EEnoiseVeto false
+
+
+########################################
+	        Jet2
+#######################################
+
+EtaCut 0. 5.0
+PtCut 60.0
+
+ApplyLooseID 1
+ApplyTightID 0
+
+RemoveOverlapWithMuon1s 1
+RemoveOverlapWithMuon2s 1
+Muon1MatchingDeltaR  0.4
+Muon2MatchingDeltaR  0.4
+
+RemoveOverlapWithElectron1s 0
+RemoveOverlapWithElectron2s 0
+Electron1MatchingDeltaR  0.3
+Electron2MatchingDeltaR  0.3
+
+RemoveOverlapWithTau1s 0
+RemoveOverlapWithTau2s 0
+Tau1MatchingDeltaR  0.3
+Tau2MatchingDeltaR 0.3
+
+RemoveOverlapWithBs 0
+BJMatchingDeltaR 0.3
+
+Apply2017EEnoiseVeto false
+
+####################################
+          CentralJet
+###################################
+
+PtCut 60.0
+
+ApplyLooseID 1
+ApplyTightID 0
+
+RemoveOverlapWithMuon1s 1
+RemoveOverlapWithMuon2s 1
+Muon1MatchingDeltaR 0.4
+Muon2MatchingDeltaR 0.4
+
+RemoveOverlapWithElectron1s 0
+RemoveOverlapWithElectron2s 0
+Electron1MatchingDeltaR 0.3
+Electron2MatchingDeltaR 0.3
+
+RemoveOverlapWithTau1s 0
+RemoveOverlapWithTau2s 0
+Tau1MatchingDeltaR 0.3
+Tau2MatchingDeltaR 0.3
+
+Apply2017EEnoiseVeto false
+
+####################################
+	 FirstLeadingJet
+###################################
+
+DoDiscrByThisJet 1
+
+EtaCut 0.0 5.0
+PtCut 60.0
+
+ApplyLooseID 1
+ApplyTightID 0
+
+RemoveOverlapWithMuon1s 1 
+RemoveOverlapWithMuon2s 1
+Muon1MatchingDeltaR 0.4 
+Muon2MatchingDeltaR 0.4
+
+RemoveOverlapWithElectron1s 0
+RemoveOverlapWithElectron2s 0
+Electron1MatchingDeltaR 0.3
+Electron2MatchingDeltaR 0.3
+
+RemoveOverlapWithTau1s 0
+RemoveOverlapWithTau2s 0
+Tau1MatchingDeltaR 0.3
+Tau2MatchingDeltaR 0.3
+
+Apply2017EEnoiseVeto false
+
+####################################
+	 SecondLeadingJet
+###################################
+
+DoDiscrByThisJet 1
+
+EtaCut 0.0 5.0
+PtCut 60.0
+
+ApplyLooseID 1
+ApplyTightID 0
+
+RemoveOverlapWithMuon1s 1
+RemoveOverlapWithMuon2s 1
+Muon1MatchingDeltaR 0.4
+Muon2MatchingDeltaR 0.4
+
+RemoveOverlapWithElectron1s 0
+RemoveOverlapWithElectron2s 0
+Electron1MatchingDeltaR 0.3
+Electron2MatchingDeltaR 0.3
+
+RemoveOverlapWithTau1s 0
+RemoveOverlapWithTau2s 0
+Tau1MatchingDeltaR 0.3
+Tau2MatchingDeltaR 0.3
+
+Apply2017EEnoiseVeto false
+
+###################################
+    	     BJet
+##################################
+
+EtaCut 0.0 2.4
+PtCut 30.0
+
+RemoveOverlapWithMuon1s 1
+RemoveOverlapWithMuon2s 1
+Muon1MatchingDeltaR 0.4
+Muon2MatchingDeltaR 0.4
+
+RemoveOverlapWithElectron1s 0
+RemoveOverlapWithElectron2s 0
+Electron1MatchingDeltaR 0.3
+Electron2MatchingDeltaR 0.3
+
+RemoveOverlapWithTau1s 0
+RemoveOverlapWithTau2s 0
+Tau1MatchingDeltaR 0.3
+Tau2MatchingDeltaR 0.3
+
+Apply2017EEnoiseVeto false
+
+ApplyJetBTaggingCSVv2 0 
+ApplyJetBTaggingDeepCSV 1
+ApplyJetBTaggingDeepFlav 0
+
+JetBTaggingWP   medium
+JetBTaggingCut  0.6321
+MatchBToGen     0
+UseBtagSF       1
+RemoveBJetsFromJets 0
