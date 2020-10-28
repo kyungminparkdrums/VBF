@@ -47,7 +47,6 @@ def getScaleFactors(bg='WJet', cut='name of the cut'):
 
     # propagate uncertainties
     nData = nProcess = nNonProcess = nTotalMC = 0.
-    delta_nData = sqrt(nData)
     delta_nProcess = delta_nNonProcess = delta_nTotalMC = 0.
     delta_nNonProcess_squared = delta_nTotalMC_squared = 0.
 
@@ -55,6 +54,7 @@ def getScaleFactors(bg='WJet', cut='name of the cut'):
        #print("{}: {} +/- {}".format(key, value[0], value[1]))
        if key == 'Data':
             nData += value[0]
+            delta_nData = sqrt(nData)
        elif bg in key:
             nProcess += value[0]
             delta_nProcess += value[1]
