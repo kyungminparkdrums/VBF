@@ -27,7 +27,7 @@ ApplyVBFSusyZBoostSF true # Weights derived by the VBF SUSY team - Run II
 isData false
 ApplyGenWeight  true
 
-ApplyL1PrefiringWeight true
+ApplyL1PrefiringWeight false
 UseJetEMPt false
 
 /// ------ Data-specific cuts ------///
