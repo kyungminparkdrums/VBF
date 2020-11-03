@@ -9,8 +9,8 @@ DataPUHistName pileup
 MCPUHistName pileup
 
 SpecialMCPUCalculation true
-SpecialMCPUHistos new_mc2017_pileupReweighting_NanoAODv6.root
-/// SpecialMCPUHistos new_mc2017_pileupReweighting_NanoAODv6_wanddylo_incl.root
+///SpecialMCPUHistos new_mc2017_pileupReweighting_NanoAODv6.root
+SpecialMCPUHistos new_mc2017_pileupReweighting_NanoAODv6_wanddylo_incl.root
 
 ApplyTauIDSF false
 TauIdSFsByDM false # Tau ID scale factors that are decay mode (DM) - dependent. If using di-tau triggers and tau-pt > 40 GeV, this are the recommended SFs.
