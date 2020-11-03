@@ -43,7 +43,7 @@ NGenTau		0  -1
 ***NRecoBJet	      0    0        /// BJet veto 
 NRecoElectron2	      0   -1        /// Electrons not vetoed: used for overlap removal in Tau veto
 NRecoTau2	      0   -1        /// Tau1 and Tau2 definitions are the same
-NDiMuonCombinations   1   -1     /// Muon selection: Dimuon cut
+NDiMuonCombinations   0   -1     /// Muon selection: Dimuon cut
 NRecoCentralJet       0   -1        
 NRecoTriggers2	      0   -1           ///only 0 or 1
 NRecoSecondLeadingJet 0   -1           ///only 0 or 1
