@@ -76,6 +76,7 @@ DiBoson = [
     'WpWpJJ_QCD_TuneCP5_13TeV-madgraph-pythia8',
     'GluGluToWWToENEN_13TeV_MCFM701_pythia8',
     'GluGluToWWToENMN_13TeV_MCFM701_pythia8',
+    'GluGluToWWToENTN_13TeV_MCFM701_pythia8',
     'GluGluToWWToMNEN_13TeV_MCFM701_pythia8',
     'GluGluToWWToMNMN_13TeV_MCFM701_pythia8',
     'GluGluToWWToMNTN_13TeV_MCFM701_pythia8',
