@@ -22,7 +22,7 @@ if len(sys.argv) != 3:
 
 
 # function that gets the scale factor and its error corresponding to the cut whose name is given as a parameter
-def getScaleFactors(bg='WJet', cut='name of the cut'):
+def getScaleFactors(bg='W+Jets', cut='name of the cut'):
     # open the file
     f = open(sys.argv[1])
 
@@ -92,12 +92,12 @@ def getScaleFactors(bg='WJet', cut='name of the cut'):
     delta_purity = purity * sqrt( (delta_purity_numerator/purity_numerator)**2 + (delta_purity_denominator/purity_denominator)**2 )
 
     # print out the results
-    print('\nSTEP = {}'.format(cut))
-    print('Data: {}'.format(nData))
-    print('{}: {} +/- {}'.format(bg, nProcess, delta_nProcess))
-    print('Non-{}: {} +/- {}'.format(bg, nNonProcess, delta_nNonProcess))
-    print('{} cut {}-SF: {:.3f} $\pm$ {:.3f}'.format(cut, bg, scaleFactor, delta_scaleFactor))
-    return(scaleFactor, delta_scaleFactor, purity, delta_purity, nTotalMC, delta_nTotalMC)
+    #print('\nSTEP = {}'.format(cut))
+    #print('Data: {}'.format(nData))
+    #print('{}: {} +/- {}'.format(bg, nProcess, delta_nProcess))
+    #print('Non-{}: {} +/- {}'.format(bg, nNonProcess, delta_nNonProcess))
+    #print('{} cut {}-SF: {:.3f} $\pm$ {:.3f}'.format(cut, bg, scaleFactor, delta_scaleFactor))
+    return(scaleFactor, delta_scaleFactor, purity, delta_purity, nTotalMC, delta_nTotalMC, nData, delta_nData, nProcess, delta_nProcess)
 
 
 # save the sf and its error as a txt file
@@ -122,10 +122,10 @@ def saveSF(year=2016, bg='W', cut='name of the cut'):
 if __name__ == '__main__':
     bg = sys.argv[2]   # i.e. W or DY
     
-    if 'W' in bg:
-        cutList = [ 'Trigger', 'Muon1', 'Muon2', 'MET', 'DiJet', 'Tau', 'BJet' ]
-    elif 'DY' in bg:
-        cutList = [ 'Trigger', 'Muon1', 'DiMuon', 'MET', 'DiJet', 'Tau', 'BJet' ]
+    if 'W+Jets' in bg:
+        cutList = [ 'Trigger', 'Muon1', 'Muon2', 'MET', 'Jet1','Jet2', 'DiJet', 'Tau', 'BJet' ]
+    elif 'DY+Jets' in bg:
+        cutList = [ 'Trigger', 'Muon1', 'DiMuon', 'MET', 'Jet1','Jet2', 'DiJet', 'Tau', 'BJet' ]
 
     print('\n')
 
@@ -139,8 +139,8 @@ if __name__ == '__main__':
     for cut in cutList:
         if cut == 'DiJet' and 'CR1' in sys.argv[1]:
             continue
-        if cut == 'Muon2' and year != 2018:
-            continue
-        print('{} step {}-SF: {:.3f} $\pm$ {:.4f}, Purity: {:.3f} $\pm$ {:.4f}, Total MC: {:.2f} $\pm$ {:.2f}'.format(cut, bg, getScaleFactors(bg, cut)[0], getScaleFactors(bg,cut)[1], getScaleFactors(bg,cut)[2], getScaleFactors(bg,cut)[3], getScaleFactors(bg,cut)[4], getScaleFactors(bg,cut)[5]))
+        #if cut == 'Muon2' and year != 2018:
+        #    continue
+        print('{} step {}-SF: {:.3f} $\pm$ {:.3f}, Purity: {:.3f} $\pm$ {:.3f}, Total MC: {:.1f} $\pm$ {:.1f}, Data: {:.1f} $\pm$ {:.1f}, Process: {:.1f} $\pm$ {:.1f}'.format(cut, bg, getScaleFactors(bg, cut)[0], getScaleFactors(bg,cut)[1], getScaleFactors(bg,cut)[2], getScaleFactors(bg,cut)[3], getScaleFactors(bg,cut)[4], getScaleFactors(bg,cut)[5], getScaleFactors(bg,cut)[6], getScaleFactors(bg,cut)[7], getScaleFactors(bg,cut)[8], getScaleFactors(bg,cut)[9]))
    
-    #saveSF(year, bg, 'BJet')
+    saveSF(year, bg, 'BJet')
