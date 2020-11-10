@@ -14,6 +14,18 @@ In each CR folder,
 
 `run0lep.py` and `batch.py` will automatically do things for you. Just edit the config files as you need them to be.
 
+# PlotterOutput
+Output from the Plotter
+
+- **Root**: output file in root format from the Plotter
+- **SaveAsPdf**: reads the output file in root format and save certain figures inside the root file as pdf, following the options given by user
+  - **`saveFigures.py`**: Get a plotter output root file and a config file that contains the options for saving the figures from the plotter output. Then, save them as pdf files following the user options given in the config file. `python saveFigures.py --config <config file> --input_file <input root file (output file from the Plotter)>`
+  - **config**: i.e. `config/saveOptions.config`
+    - Config file contains options for saving figures. 
+    - Mandatory options to be included in every line are as follows. ```--step <cut step> --kinematic <kinematic>```
+    - Additional options you can add are as follows. ```--output_dir <output directory>\n--display_title <True or False> \n--draw_without_ratio <True or False> \n--set_logX <True or False> \n--x_range <x axis range in list format> \n--x_title <x axis title in TLatex format> \n--set_logY <True or False> \n--histo_y_range <stacked histogram y axis range in list format> \n--histo_y_title <stacked histogram y axis title> \n--ratio_y_range <ratio plot y axis range in list format>\n```
+
+
 # RunAnalyzer
 `python3 run0lep_2016.py [sample]`
 
