@@ -17,7 +17,7 @@ In each CR folder,
 # PlotterOutput
 Output from the Plotter
 
-- **`Root`** folder: output file in root format from the Plotter
+- **`Root`** folder: contains output files in root format from the Plotter
 - **`SaveAsPdf`** folder: reads the output file in root format and save certain figures inside the root file as pdf, following the options given by user
   - **`saveFigures.py`**: Get a plotter output root file and a config file that contains the options for saving the figures from the plotter output. Then, save them as pdf files following the user options given in the config file. 
       ```
