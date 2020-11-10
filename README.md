@@ -22,8 +22,19 @@ Output from the Plotter
   - **`saveFigures.py`**: Get a plotter output root file and a config file that contains the options for saving the figures from the plotter output. Then, save them as pdf files following the user options given in the config file. `python saveFigures.py --config <config file> --input_file <input root file (output file from the Plotter)>`
   - **config**: i.e. `config/saveOptions.config`
     - Config file contains options for saving figures. 
-    - Mandatory options to be included in every line are as follows. ```--step <cut step> --kinematic <kinematic>```
-    - Additional options you can add are as follows. ```--output_dir <output directory>\n--display_title <True or False> \n--draw_without_ratio <True or False> \n--set_logX <True or False> \n--x_range <x axis range in list format> \n--x_title <x axis title in TLatex format> \n--set_logY <True or False> \n--histo_y_range <stacked histogram y axis range in list format> \n--histo_y_title <stacked histogram y axis title> \n--ratio_y_range <ratio plot y axis range in list format>\n```
+    - Mandatory options to be included in every line are as follows. 
+      ```--step <cut step> --kinematic <kinematic>```
+    - Additional options you can add are as follows. 
+      ```--output_dir <output directory>
+         --display_title <True or False>
+         --draw_without_ratio <True or False>
+         --set_logX <True or False>
+         --x_range <x axis range in list format> 
+         --x_title <x axis title in TLatex format>
+         --set_logY <True or False> 
+         --histo_y_range <stacked histogram y axis range in list format> 
+         --histo_y_title <stacked histogram y axis title>
+         --ratio_y_range <ratio plot y axis range in list format>```
 
 
 # RunAnalyzer
