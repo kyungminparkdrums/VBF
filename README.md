@@ -23,6 +23,7 @@ Output from the Plotter
       ```
          python saveFigures.py --config <config file> --input_file <input root file (output file from the Plotter)>
       ```
+  - Running the line above will give you the certain histograms after certain cut step that you specified in the config file, in pdf format under the nameof `<cut_step>_<histogram_name>.pdf`
   - **config**: i.e. `config/saveOptions.config`
     - Config file contains options for saving figures. 
     - Mandatory options to be included in every line are as follows. 
