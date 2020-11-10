@@ -42,6 +42,10 @@ Output from the Plotter
          --histo_y_title <stacked histogram y axis title>
          --ratio_y_range <ratio plot y axis range in list format>
       ```
+    - IMPORTANT: when giving options for axis title, please note the followings (otherwise, it'll crash):
+      - 1. if the title contains brackets, please put a backslash before opening and closing of the brackets, i.e. p_{T}\(jj\) instead of p_{T}(jj)
+      - 2. if the title contains greek letters that require backslash in latex form, replace the backslash with hashtag, i.e. #mu instead of \mu
+    - i,e. `--step NDiMuonCombinations --kinematic DiMuonPt --ratio_y_range [0.6,1.4] --x_range [0,300]`
 
 ```
 # Example
