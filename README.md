@@ -19,12 +19,15 @@ Output from the Plotter
 
 - **Root**: output file in root format from the Plotter
 - **SaveAsPdf**: reads the output file in root format and save certain figures inside the root file as pdf, following the options given by user
-  - **`saveFigures.py`**: Get a plotter output root file and a config file that contains the options for saving the figures from the plotter output. Then, save them as pdf files following the user options given in the config file. `python saveFigures.py --config <config file> --input_file <input root file (output file from the Plotter)>`
+  - **`saveFigures.py`**: Get a plotter output root file and a config file that contains the options for saving the figures from the plotter output. Then, save them as pdf files following the user options given in the config file. 
+      ```
+         python saveFigures.py --config <config file> --input_file <input root file (output file from the Plotter)>
+      ```
   - **config**: i.e. `config/saveOptions.config`
     - Config file contains options for saving figures. 
     - Mandatory options to be included in every line are as follows. 
       ```
-      --step <cut step> --kinematic <kinematic>
+         --step <cut step> --kinematic <kinematic>
       ```
     - Additional options you can add are as follows. 
       ```
