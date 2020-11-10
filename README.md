@@ -17,8 +17,8 @@ In each CR folder,
 # PlotterOutput
 Output from the Plotter
 
-- **Root**: output file in root format from the Plotter
-- **SaveAsPdf**: reads the output file in root format and save certain figures inside the root file as pdf, following the options given by user
+- **`Root`** folder: output file in root format from the Plotter
+- **`SaveAsPdf`** folder: reads the output file in root format and save certain figures inside the root file as pdf, following the options given by user
   - **`saveFigures.py`**: Get a plotter output root file and a config file that contains the options for saving the figures from the plotter output. Then, save them as pdf files following the user options given in the config file. 
       ```
          python saveFigures.py --config <config file> --input_file <input root file (output file from the Plotter)>
@@ -42,6 +42,14 @@ Output from the Plotter
          --histo_y_title <stacked histogram y axis title>
          --ratio_y_range <ratio plot y axis range in list format>
       ```
+
+```
+# Example
+# from /VBF/PlotterOutput/, 
+cd ./SaveAsPdf/
+python saveFigures.py --config ./config/saveOptions.config --input_file ../Root/2016_Z_CR2.root
+
+```
 
 # RunAnalyzer
 `python3 run0lep_2016.py [sample]`
