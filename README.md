@@ -23,9 +23,12 @@ Output from the Plotter
   - **config**: i.e. `config/saveOptions.config`
     - Config file contains options for saving figures. 
     - Mandatory options to be included in every line are as follows. 
-      ```--step <cut step> --kinematic <kinematic>```
+      ```
+      --step <cut step> --kinematic <kinematic>
+      ```
     - Additional options you can add are as follows. 
-      ```--output_dir <output directory>
+      ```
+         --output_dir <output directory>
          --display_title <True or False>
          --draw_without_ratio <True or False>
          --set_logX <True or False>
@@ -34,8 +37,8 @@ Output from the Plotter
          --set_logY <True or False> 
          --histo_y_range <stacked histogram y axis range in list format> 
          --histo_y_title <stacked histogram y axis title>
-         --ratio_y_range <ratio plot y axis range in list format>```
-
+         --ratio_y_range <ratio plot y axis range in list format>
+      ```
 
 # RunAnalyzer
 `python3 run0lep_2016.py [sample]`
