@@ -26,7 +26,7 @@ Output from the Plotter
   - Running the line above will give you the certain histograms after certain cut step that you specified in the config file, in pdf format under the name of `<cut_step>_<histogram_name>.pdf`. Unless you specified the output pdf directory in the config file, i.e. `--output_dir <dir>`, these will be stored in `./output/` directory which will be automatically created.
   - **config**: i.e. `config/saveOptions.config`
     - Config file contains options for saving figures. 
-    - Mandatory options to be included in every line are as follows. 
+    - Mandatory options to be included in every line of the config file are as follows. 
       ```
          --step <cut step> --kinematic <kinematic>
       ```
@@ -59,7 +59,7 @@ Output from the Plotter
 # Example
 # from /VBF/PlotterOutput/, 
 cd ./SaveAsPdf/
-python saveFigures.py -c config/saveOptions.config -f ../Root/2017_Z_CR1.root
+python saveFigures.py --config config/saveOptions.config --input_file ../Root/2017_Z_CR1.root
 
 ```
 
