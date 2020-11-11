@@ -32,7 +32,10 @@ Output from the Plotter
       ```
     - Additional options you can add are as follows. 
       ```
+         --year <year (to correct the lumi on the top right if necessary)>
+         --isPreliminary <True (change Work in Progress to Preliminary) or False (keep Work in Progress)>
          --output_dir <output directory>
+         --legend_column <# of columns for the legend>
          --display_title <True or False>
          --draw_without_ratio <True or False>
          --set_logX <True or False>
@@ -48,15 +51,15 @@ Output from the Plotter
       - 2. if the title contains greek letters that require backslash in latex form, replace the backslash with hashtag, i.e. `#mu` instead of `\mu`
       ```
       # Example
-      --step NDiMuonCombinations --kinematic DiMuonPt --ratio_y_range [0.6,1.4] --x_range [0,300]
-      --step NRecoTriggers1 --kinematic Met --set_logY True --x_title p^{miss}_{T}[GeV]
+      --step NDiMuonCombinations --kinematic DiMuonPt --x_range [0,300] --set_logY True --ratio_y_range [0.6,1.4] --legend_column 2 --year 2017
+      --step NRecoBJet --kinematic Met --x_title p^{miss}_{T}[GeV] --histo_y_title Events --legend_column 1 --x_range [250,1000] --year 2017
       ```
 
 ```
 # Example
 # from /VBF/PlotterOutput/, 
 cd ./SaveAsPdf/
-python saveFigures.py --config ./config/saveOptions.config --input_file ../Root/2016_Z_CR2.root
+python saveFigures.py -c config/saveOptions.config -f ../Root/2017_Z_CR1.root
 
 ```
 
