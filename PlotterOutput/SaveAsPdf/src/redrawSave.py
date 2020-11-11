@@ -9,7 +9,8 @@ Kyungmin Park (kyungmin.park@cern.ch; jazzykm0110@uos.ac.kr)
 '''
 
 import os, sys, getopt
-from ROOT import TFile, TDirectory, TCanvas, TPad, TObject, THStack, TH1D, TAxis, gStyle
+#from ROOT import TFile, TDirectory, TCanvas, TPad, TObject, THStack, TH1D, TAxis, TLegend, TText, TPaveText, TBox, TStyle, gStyle
+from ROOT import *
 
 # input file
 file_dir = "/home/kyungminpark/CMSSW_10_2_18/src/vbfsusy/plotter/"
@@ -55,6 +56,13 @@ ratio_y_range = [0.6, 1.4]
 # other settings
 display_title = False
 draw_without_ratio = False
+legend_nColumn = 1
+
+isPreliminary = False
+status = "Work in Progress"
+
+year_specified = False
+lumi = [35.9, 41.5, 59.7]
 
 def replot():
     if os.path.exists(infile):
@@ -80,6 +88,27 @@ def replot():
     except:
         print("Cannot access the stacked histogram named {} inside the directory {}. Terminating the program.\n".format(kinematic, step))
         sys.exit()
+
+    # Make sure lumi on top right side of the canvas is correct
+    if year_specified == True:
+        lumi_text = stack_pad.GetListOfPrimitives()[3]
+        lumi_text.Clear()
+        lumi_text.AddText("{:.1f} fb^{} (13 TeV)".format(lumi[abs(2018-(year+2))],"{-1}"))
+
+    # Work in Progress or Preliminary under CMS logo
+    cms_text = stack_pad.GetListOfPrimitives()[5]
+    cms_text.Clear()
+    cms_text.AddText(status)
+    cms_text.SetTextSize(0.04)
+
+    # Legend
+    legend = stack_pad.GetListOfPrimitives()[7]
+    legend.SetNColumns(legend_nColumn)
+    legend.SetTextSize(0.03)
+    legend.SetY1(0.3)
+    if legend_nColumn > 1:
+        legend.SetX1(0.8-legend_nColumn*0.06)
+        legend.SetY1(0.5+legend_nColumn*0.06)
 
     # Change x-axis settings
     if change_x_range == True:
@@ -148,12 +177,12 @@ def replot():
 
 def printUsage():
     print("\nUsage: python saveFig.py --input_file <root file> --step <cut step> --kinematic <kinematic>")
-    print("Additional options you can add are as below: \n--output_dir <output directory>\n--display_title <True or False> \n--draw_without_ratio <True or False> \n--set_logX <True or False> \n--x_range <x axis range in list format> \n--x_title <x axis title in TLatex format> \n--set_logY <True or False> \n--histo_y_range <stacked histogram y axis range in list format> \n--histo_y_title <stacked histogram y axis title> \n--ratio_y_range <ratio plot y axis range in list format>\n") 
+    print("Additional options you can add are as below: \n--year <year> \n--output_dir <output directory>\n--legend_column <# of columns for legend>\n--display_title <True or False> \n--draw_without_ratio <True or False> \n--set_logX <True or False> \n--x_range <x axis range in list format> \n--x_title <x axis title in TLatex format> \n--set_logY <True or False> \n--histo_y_range <stacked histogram y axis range in list format> \n--histo_y_title <stacked histogram y axis title> \n--ratio_y_range <ratio plot y axis range in list format>\n") 
  
 
 # read the arguments of options and apply those options
 try:
-    opts,args = getopt.getopt(sys.argv[1:], ":", ["guide=","output_dir=","input_file=","step=","kinematic=","display_title=","draw_without_ratio=","set_logX=","x_range=","x_title=","set_logY=","histo_y_range=","histo_y_title=","ratio_y_range="])
+    opts,args = getopt.getopt(sys.argv[1:], ":", ["guide=","year=","isPreliminary=","output_dir=","input_file=","step=","kinematic=","legend_column=","display_title=","draw_without_ratio=","set_logX=","x_range=","x_title=","set_logY=","histo_y_range=","histo_y_title=","ratio_y_range="])
 except getopt.GetoptError:
     printUsage()
     sys.exit()
@@ -166,6 +195,13 @@ for opt, arg in opts:
     if opt == "--guide":
         printUsage()
         sys.exit()
+    elif opt == "--year":
+        year = int(arg)
+        year_specified = True
+    elif opt == "--isPreliminary":
+        isPreliminary = eval(arg)
+        if isPreliminary == True:
+             status = "Preliminary"
     elif opt == "--output_dir":
         output_dir = arg
     elif opt == "--input_file":
@@ -177,6 +213,8 @@ for opt, arg in opts:
     elif opt == "--kinematic":
         kinematic = arg
         hasKinematic = True
+    elif opt == "--legend_column":
+        legend_nColumn = int(arg)
     elif opt == "--display_title":
         display_title = arg
     elif opt == "--draw_without_ratio":
@@ -200,7 +238,7 @@ for opt, arg in opts:
     elif opt == "--ratio_y_range":
         change_ratio_y_range = True
         ratio_y_range = eval(arg)
- 
+
 if hasInput == False or hasStep == False or hasKinematic == False:
     print("\nMake sure you provided all the mandatory arguments: --input_file <root file> --step <cut step> --kinematic <kinematic>")
     printUsage()
