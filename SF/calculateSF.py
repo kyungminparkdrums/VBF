@@ -43,7 +43,8 @@ def getScaleFactors(bg='W+Jets', cut='name of the cut'):
     #print(numbers)
 
     # for every item in the dictionary, <sample name>: [ <nEvent>, <stat. uncertainty> ]
-    eventDic = {'Data':[numbers[0],0.], 'DPS_VV':[numbers[1],numbers[2]], 'DY+Jets':[numbers[3],numbers[4]], 'EWK_V':[numbers[5],numbers[6]], 'EWK_VV':[numbers[7],numbers[8]], 'Higgs':[numbers[9],numbers[10]], 'QCD':[numbers[11],numbers[12]], 'SingleTop':[numbers[13],numbers[14]], 'V#gamma':[numbers[15],numbers[16]], 'VV':[numbers[17],numbers[18]], 'VVV':[numbers[19],numbers[20]], 'W+Jets': [numbers[21], numbers[22]], 't#bar{t}+X': [numbers[23], numbers[24]], 't#bar{t}':[numbers[25],numbers[26]]}
+    eventDic = {'Data':[numbers[0],0.], 'DPS_VV':[numbers[1],numbers[2]], 'DY+Jets':[numbers[3],numbers[4]], 'EWK_VV':[numbers[5],numbers[6]], 'EWK_W':[numbers[7],numbers[8]], 'EWK_Z':[numbers[9],numbers[10]], 'Higgs':[numbers[11],numbers[12]], 'QCD':[numbers[13],numbers[14]], 'SingleTop':[numbers[15],numbers[16]], 'V#gamma':[numbers[17],numbers[18]], 'VV':[numbers[19],numbers[20]], 'VVV': [numbers[21], numbers[22]], 'W+Jets': [numbers[23], numbers[24]], 't#bar{t}+X':[numbers[25],numbers[26]], 't#bar{t}':[numbers[27],numbers[28]]}
+    #eventDic = {'Data':[numbers[0],0.], 'DPS_VV':[numbers[1],numbers[2]], 'DY+Jets':[numbers[3],numbers[4]], 'EWK_V':[numbers[5],numbers[6]], 'EWK_VV':[numbers[7],numbers[8]], 'Higgs':[numbers[9],numbers[10]], 'QCD':[numbers[11],numbers[12]], 'SingleTop':[numbers[13],numbers[14]], 'V#gamma':[numbers[15],numbers[16]], 'VV':[numbers[17],numbers[18]], 'VVV':[numbers[19],numbers[20]], 'W+Jets': [numbers[21], numbers[22]], 't#bar{t}+X': [numbers[23], numbers[24]], 't#bar{t}':[numbers[25],numbers[26]]}
 
     # propagate uncertainties
     nData = nProcess = nNonProcess = nTotalMC = 0.
@@ -143,4 +144,4 @@ if __name__ == '__main__':
         #    continue
         print('{} step {}-SF: {:.3f} $\pm$ {:.3f}, Purity: {:.3f} $\pm$ {:.3f}, Total MC: {:.1f} $\pm$ {:.1f}, Data: {:.1f} $\pm$ {:.1f}, Process: {:.1f} $\pm$ {:.1f}'.format(cut, bg, getScaleFactors(bg, cut)[0], getScaleFactors(bg,cut)[1], getScaleFactors(bg,cut)[2], getScaleFactors(bg,cut)[3], getScaleFactors(bg,cut)[4], getScaleFactors(bg,cut)[5], getScaleFactors(bg,cut)[6], getScaleFactors(bg,cut)[7], getScaleFactors(bg,cut)[8], getScaleFactors(bg,cut)[9]))
    
-    saveSF(year, bg, 'BJet')
+    #saveSF(year, bg, 'BJet')
