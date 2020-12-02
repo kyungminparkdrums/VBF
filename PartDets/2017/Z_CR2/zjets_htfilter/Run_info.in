@@ -9,7 +9,7 @@ DataPUHistName pileup
 MCPUHistName pileup
 
 SpecialMCPUCalculation true
-///SpecialMCPUHistos new_mc2017_pileupReweighting_NanoAODv6.root
+//SpecialMCPUHistos new_mc2017_pileupReweighting_NanoAODv6.root
 SpecialMCPUHistos new_mc2017_pileupReweighting_NanoAODv6_wanddylo_incl.root
 
 ApplyTauIDSF false

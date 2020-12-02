@@ -22,7 +22,7 @@ ApplyTauAntiMuSF false
 UsePileUpWeight true
 ApplyISRZBoostSF false # Z-boost weight corrections derived for ISR+stau analysis (SUS-19-002)
 ApplySUSYZBoostSF false # Official Z-boost weight corrections derived by the SUSY PAG.
-ApplyVBFSusyZBoostSF true # Weights derived by the VBF SUSY team - Run II
+ApplyVBFSusyZBoostSF false # Weights derived by the VBF SUSY team - Run II
 
 isData false
 ApplyGenWeight  true
@@ -31,7 +31,7 @@ ApplyL1PrefiringWeight true
 UseJetEMPt false
 
 /// ------ Data-specific cuts ------///
-FilterDataByGoldenJSON false
+FilterDataByGoldenJSON true
 ApplyHEMVeto2018 false
 
 /// ------ MC Gen-level cuts ------///
