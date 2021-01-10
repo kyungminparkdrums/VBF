@@ -26,11 +26,11 @@ if not os.path.exists(outDir):
     print('\nOutput directory {} does not exist. \nCreating it .. \n'.format(outDir))
 
 # Data
-dataDir = '/store/data/Run2018'
+dataDir = '/data/Run2018'
 dataList = [ 'A', 'B', 'C', 'D' ]
 
 # MC
-mcDir = '/store/mc/RunIIAutumn18NanoAODv6/'
+mcDir = '/mc/RunIIAutumn18NanoAODv6/'
 
 TTbar = [
     'TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8',
