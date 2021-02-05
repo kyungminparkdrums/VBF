@@ -204,6 +204,9 @@ for opt, arg in opts:
              status = "Preliminary"
     elif opt == "--output_dir":
         output_dir = arg
+        if not os.path.exists(output_dir):
+            os.mkdir(output_dir)
+            print("\nCreated the output directory({})\n".format(output_dir))
     elif opt == "--input_file":
         infile = arg
         hasInput = True
