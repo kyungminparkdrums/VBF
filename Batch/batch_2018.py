@@ -18,7 +18,7 @@ runData = False
 runMC = True
 
 # set output directory
-hostDir = '/home/scratch/'
+hostDir = '/store/scratch/'
 outDir = hostDir + os.environ.get('USER') + '/2018/test/'
 
 if not os.path.exists(outDir):
