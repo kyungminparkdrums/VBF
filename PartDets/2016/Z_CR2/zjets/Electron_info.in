@@ -57,10 +57,10 @@ MetMtCut 0. 40.
 //---RECO CUTS---///
 
 EtaCut 2.5
-PtCut 0.0 10.0
+PtCut 10.0 9999.9
 
 DoDiscrByIsolation 0
-IsoSumPtCutValue 0.0 0.15
+IsoSumPtCutValue 0.1 0.2
 
 //(0:fail, 1:veto, 2:loose, 3:medium, 4:tight)
 DoDiscrByCBID true

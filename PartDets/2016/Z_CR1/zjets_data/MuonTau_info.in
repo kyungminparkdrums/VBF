@@ -2,7 +2,7 @@
          Muon1Tau1
 #############################
 
-DiscrByDeltaR  0
+DiscrByDeltaR  1
 DeltaRCut      0.3 
 
 DiscrByOSLSType  No
@@ -15,7 +15,7 @@ CosDphi_DeltaPtMetCut  0.8  1.0
 
 DiscrByMassReco  0
 HowCalculateMassReco none     ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
-MassCut          0.0   100.0
+MassCut          0.0   200.0
 
 DiscrByCDFzeta2D          0
 PZetaCutCoefficient       1.0
@@ -48,10 +48,10 @@ DiLeadMassDeltaPtCut   0.0   9000.0
            Muon1Tau2
 ##############################
 
-DiscrByDeltaR  0
+DiscrByDeltaR  1
 DeltaRCut      0.3 
 
-DiscrByOSLSType No
+DiscrByOSLSType  No
 
 DiscrByCosDphi	 0			# dPhi is calculated between Muon1 and Tau2
 CosDphiCut 	 -1.00   -0.95
@@ -61,7 +61,7 @@ CosDphi_DeltaPtMetCut  0.8  1.0
 
 DiscrByMassReco  0
 HowCalculateMassReco none     ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
-MassCut          0.0   100.0
+MassCut          0.0   200.0
 
 DiscrByCDFzeta2D          0
 PZetaCutCoefficient       1.0
@@ -94,7 +94,7 @@ DiLeadMassDeltaPtCut   0.0   9000.0
               Muon2Tau1
 ###################################
 
-DiscrByDeltaR  0
+DiscrByDeltaR  1
 DeltaRCut      0.3 
 
 DiscrByOSLSType  No
@@ -107,7 +107,7 @@ CosDphi_DeltaPtMetCut  0.8  1.0
 
 DiscrByMassReco  0
 HowCalculateMassReco none     ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
-MassCut          0.0   100.0
+MassCut          0.0   200.0
 
 DiscrByCDFzeta2D          0
 PZetaCutCoefficient       1.0
@@ -140,7 +140,7 @@ DiLeadMassDeltaPtCut   0.0   9000.0
         Muon2Tau2
 ########################
 
-DiscrByDeltaR  0
+DiscrByDeltaR  1
 DeltaRCut      0.3 
 
 DiscrByOSLSType  No
@@ -153,7 +153,7 @@ CosDphi_DeltaPtMetCut  0.8  1.0
 
 DiscrByMassReco  0
 HowCalculateMassReco none     ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
-MassCut          0.0   100.0
+MassCut          0.0   200.0
 
 DiscrByCDFzeta2D          0
 PZetaCutCoefficient       1.0

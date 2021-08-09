@@ -3,7 +3,7 @@
 /////////////////////////////////
 
 SmearTheParticle 0
-ApplyETauFakeRateESSF 0
+ApplyETauFakeRateESSF 1
 
 PtScaleOffset 1.0
 PtSigmaOffset 1.

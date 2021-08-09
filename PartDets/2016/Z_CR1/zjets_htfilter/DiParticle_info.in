@@ -2,17 +2,17 @@
               DiTau
 #######################################
 
-DiscrByDeltaR  false
-DeltaRCut      0.3
+DiscrByDeltaR  0
+DeltaRCut      0.4
 
-DiscrByOSLSType  None	#### OS or LS
+DiscrByOSLSType  No		#### OS or LS
 
 DiscrByCosDphi	 false			# dPhi is calculated between Tau1 and Tau2 
 CosDphiCut 	 -1.00   -0.80
 
 DiscrByMassReco  false
-HowCalculateMassReco  VectorSumofVisProductsAndMet       ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
-MassCut          0.0   10000.0
+HowCalculateMassReco  NONE       ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
+MassCut          0.0   100.0
 
 DiscrByCDFzeta2D          false
 PZetaCutCoefficient       1.0
@@ -97,7 +97,7 @@ DiLeadMassDeltaPtCut   0.0   9000.0
 #######################################
 
 DiscrByDeltaR  0
-DeltaRCut      0.3 
+DeltaRCut      0.4 
 
 DiscrByOSLSType  No
 
@@ -144,7 +144,7 @@ DiLeadMassDeltaPtCut   0.0   9000.0
 #####################################
 
 DiscrByDeltaR false
-DeltaRCut 0.3
+DeltaRCut 0.4
 
 DiscrByDeltaEta      true
 DeltaEtaCut         3.8  9999.0
@@ -160,3 +160,5 @@ CosDphiCut  -1.00 -0.80
 DiscrByMassReco true
 MassCut 1000.0 9999.0
 
+RejectForwardDiJetPairs false
+ForwardEtaRange 3.0 5.0

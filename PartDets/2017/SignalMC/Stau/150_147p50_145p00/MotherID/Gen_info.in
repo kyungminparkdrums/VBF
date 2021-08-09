@@ -1,0 +1,42 @@
+#######################
+Gen
+#######################
+
+DiscrTauByPtAndEta false
+TauPtCut -10.0  10000.0 
+TauEtaCut 10.0
+DiscrTauByMotherID  1
+TauMotherIDs   1000015. 1000015.
+DiscrTauByNotFromPileup false
+
+DiscrElecByPtAndEta   false
+ElecPtCut  -10.0    100000.0
+ElecEtaCut  10.0
+DiscrElecByMotherID   0
+ElecMotherIDs   15.   15.
+DiscrElecByNotFromPileup false
+
+DiscrMuonByPtAndEta   false
+MuonPtCut    10.0   100000.0
+MuonEtaCut   2.1
+DiscrMuonByMotherID   1
+MuonMotherIDs    15.   15.
+DiscrMuonByNotFromPileup true
+
+DiscrHadTauByPtAndEta false
+HadTauPtCut   18.0  9999.9
+HadTauEtaCut  2.5
+DiscrByTauDecayMode false
+TauDecayModes       0    15          
+DiscrHadTauByMotherID false
+HadTauMotherIDs 15 16 111 211 113 213 20113 20213 1000022 
+
+DiscrJetByPtandEta false
+JetPtCut 0.0  9999.9
+JetEtaCut 5.0
+DiscrByPartonFlavor  false
+PartonFlavorRange  0    22
+
+DiscrBJetByPtandEta  false
+BJetPtCut 0.0 9999.9
+BJetEtaCut 5.0 

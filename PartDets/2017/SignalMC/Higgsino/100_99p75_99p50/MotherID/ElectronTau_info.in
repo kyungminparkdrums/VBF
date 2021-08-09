@@ -1,0 +1,182 @@
+######################################
+          Electron1Tau1
+#####################################
+
+DiscrByDeltaR  1
+DeltaRCut      0.3 
+
+DiscrByOSLSType  No
+
+DiscrByCosDphi	 0			# dPhi is calculated between Electron1 and Tau1 
+CosDphiCut 	 -1.00   -0.95
+
+DiscrByCosDphi_DeltaPtAndMet   false
+CosDphi_DeltaPtMetCut  0.8  1.0
+
+DiscrByMassReco  0
+HowCalculateMassReco None     ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
+MassCut          0.0   200.0
+
+DiscrByCDFzeta2D          0
+PZetaCutCoefficient       1.0
+PZetaVisCutCoefficient    -3.1
+CDFzeta2DCutValue         -50.0    1000
+
+DiscrByDeltaPtDivSumPt     0
+DeltaPtDivSumPtCutValue    0.1  1.0
+
+DiscrByDeltaPt 		   0
+DeltaPtCutValue 	   30.0   1000.0
+
+DiscrByCosDphiPtAndMet 0     # dPhi between Electron1 and MET
+CosDphiPtAndMetCut  -1.00 -0.90
+
+# dPhi between leading lepton in the combination and MET
+DiscrByCosDphiLeadPtAndMet 0 
+CosDphiLeadPtAndMetCut -1.00 -0.90
+
+DiscrByAbsCosDphiLeadPtandMet   0
+AbsCosDphiLeadPtAndMetCut       0.90  1.00
+
+DiscrByMtLeadPtAndMet 0
+MtLeadPtAndMetCut     0.0   9000.0
+
+DiscrByDiLepMassDeltaPt 0
+DiLeadMassDeltaPtCut   0.0   9000.0
+
+#########################################
+             Electron1Tau2
+#########################################
+
+DiscrByDeltaR  1
+DeltaRCut      0.3 
+
+DiscrByOSLSType  No
+
+DiscrByCosDphi	 0				# dPhi is calculated between Electron1 and Tau2 
+CosDphiCut 	 -1.00   -0.95
+
+DiscrByCosDphi_DeltaPtAndMet   false
+CosDphi_DeltaPtMetCut  0.8  1.0
+
+DiscrByMassReco  0
+HowCalculateMassReco	None     ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
+MassCut          0.0   200.0
+
+DiscrByCDFzeta2D          0
+PZetaCutCoefficient       1.0
+PZetaVisCutCoefficient    -3.1
+CDFzeta2DCutValue         -50.0    1000
+
+DiscrByDeltaPtDivSumPt     0
+DeltaPtDivSumPtCutValue    0.1  1.0
+
+DiscrByDeltaPt 		   0
+DeltaPtCutValue 	   30.0   1000.0
+
+DiscrByCosDphiPtAndMet 0     # dPhi between Electron1 and MET
+CosDphiPtAndMetCut  -1.00 -0.90
+
+# dPhi between leading lepton in the combination and MET
+DiscrByCosDphiLeadPtAndMet 0 
+CosDphiLeadPtAndMetCut -1.00 -0.90
+
+DiscrByAbsCosDphiLeadPtandMet   0
+AbsCosDphiLeadPtAndMetCut       0.90  1.00
+
+DiscrByMtLeadPtAndMet 0
+MtLeadPtAndMetCut     0.0   9000.0
+
+DiscrByDiLepMassDeltaPt 0
+DiLeadMassDeltaPtCut   0.0   9000.0
+
+#########################################
+             Electron2Tau1
+#########################################
+
+DiscrByDeltaR  1
+DeltaRCut      0.3 
+
+DiscrByOSLSType  No
+
+DiscrByCosDphi	 0				# dPhi is calculated between Electron2 and Tau1
+CosDphiCut 	 -1.00   -0.95
+
+DiscrByCosDphi_DeltaPtAndMet   false
+CosDphi_DeltaPtMetCut  0.8  1.0
+
+DiscrByMassReco  0
+HowCalculateMassReco	none     ###VectorSumOfVisProductsAndMet   or    CollinearApprox 
+MassCut          0.0   200.0
+
+DiscrByCDFzeta2D          0
+PZetaCutCoefficient       1.0
+PZetaVisCutCoefficient    -3.1
+CDFzeta2DCutValue         -50.0    1000
+
+DiscrByDeltaPtDivSumPt     0
+DeltaPtDivSumPtCutValue    0.1  1.0
+DiscrByDeltaPt 		   0
+DeltaPtCutValue 	   30.0   1000.0
+
+DiscrByCosDphiPtAndMet 0     # dPhi between Electron2 and MET
+CosDphiPtAndMetCut  -1.00 -0.90
+
+# dPhi between leading lepton in the combination and MET
+DiscrByCosDphiLeadPtAndMet 0 
+CosDphiLeadPtAndMetCut -1.00 -0.90
+
+DiscrByAbsCosDphiLeadPtandMet   0
+AbsCosDphiLeadPtAndMetCut       0.90  1.00
+
+DiscrByMtLeadPtAndMet 0
+MtLeadPtAndMetCut     0.0   9000.0
+
+DiscrByDiLepMassDeltaPt 0
+DiLeadMassDeltaPtCut   0.0   9000.0
+
+#########################################
+            Electron2Tau2
+#########################################
+
+DiscrByDeltaR              1
+DeltaRCut                  0.3 
+
+DiscrByOSLSType            No
+
+DiscrByCosDphi	           0		# dPhi is calculated between Electron2 and Tau2 
+CosDphiCut 	 -1.00   -0.95
+
+DiscrByCosDphi_DeltaPtAndMet   false
+CosDphi_DeltaPtMetCut  0.8  1.0
+
+DiscrByMassReco            0
+HowCalculateMassReco none     ###VectorSumOfVisProductsAndMet or CollinearApprox  or none
+MassCut                    0.0   200.0
+
+DiscrByCDFzeta2D           0
+PZetaCutCoefficient        1.0
+PZetaVisCutCoefficient    -3.1
+CDFzeta2DCutValue         -50.0    1000
+
+DiscrByDeltaPtDivSumPt     0
+DeltaPtDivSumPtCutValue    0.1  1.0
+
+DiscrByDeltaPt 		   0
+DeltaPtCutValue 	   30.0   1000.0
+
+DiscrByCosDphiPtAndMet 0     # dPhi between Electron2 and MET
+CosDphiPtAndMetCut  -1.00 -0.90
+
+# dPhi between leading lepton in the combination and MET
+DiscrByCosDphiLeadPtAndMet 0 
+CosDphiLeadPtAndMetCut -1.00 -0.90
+
+DiscrByAbsCosDphiLeadPtandMet   0
+AbsCosDphiLeadPtAndMetCut       0.90  1.00
+
+DiscrByMtLeadPtAndMet 0
+MtLeadPtAndMetCut     0.0   9000.0
+
+DiscrByDiLepMassDeltaPt 0
+DiLeadMassDeltaPtCut   0.0   9000.0

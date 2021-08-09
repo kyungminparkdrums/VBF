@@ -1,0 +1,248 @@
+########################################
+	        Smear
+#######################################
+
+SmearTheJet 1		   # The current recommendation is to use this option (1).
+GenMatchingDeltaR 0.2
+ResolutionMatching 1       # When smearing jet energy resolution, this option must be 1.
+MuonMatchingDeltaR  0.2
+ModifiedPUsmearing 1       # This is a modified approach to the JER smearing. Check the Analyzer wiki for more info.
+
+########################################
+               Jet1
+#######################################
+
+EtaCut 0. 4.7
+PtCut 60.0
+
+ApplyLooseID 1
+ApplyTightID 0
+ApplyTightLepVetoID 0
+
+ApplyPileupJetID 0
+# WPs: tight = 0, medium = 1, loose = 2 
+PUJetIDCut 0
+FailPUJetID 0
+
+RemoveOverlapWithMuon1s 1
+RemoveOverlapWithMuon2s 1
+Muon1MatchingDeltaR  0.4
+Muon2MatchingDeltaR  0.4
+
+RemoveOverlapWithElectron1s 1
+RemoveOverlapWithElectron2s 1
+Electron1MatchingDeltaR  0.4
+Electron2MatchingDeltaR  0.4
+
+RemoveOverlapWithTau1s 1
+RemoveOverlapWithTau2s 1
+Tau1MatchingDeltaR  0.4
+Tau2MatchingDeltaR 0.4
+
+RemoveOverlapWithJs 0
+JMatchingDeltaR 0.8
+
+RemoveOverlapWithBs 0
+BJMatchingDeltaR 0.4
+
+Apply2017EEnoiseVeto false
+
+DiscrByDPhiMet 0
+DPhiMetCut 0.5 999.9
+
+DiscrByDphi1 true
+Dphi1CutMet 0.5 999.9
+
+########################################
+	        Jet2
+#######################################
+
+EtaCut 0. 4.7
+PtCut 60.0
+
+ApplyLooseID 1
+ApplyTightID 0
+ApplyTightLepVetoID 0
+
+ApplyPileupJetID 0
+# WPs: tight = 0, medium = 1, loose = 2 
+PUJetIDCut 0
+FailPUJetID 0
+
+RemoveOverlapWithMuon1s 1
+RemoveOverlapWithMuon2s 1
+Muon1MatchingDeltaR  0.4
+Muon2MatchingDeltaR  0.4
+
+RemoveOverlapWithElectron1s 1
+RemoveOverlapWithElectron2s 1
+Electron1MatchingDeltaR  0.4
+Electron2MatchingDeltaR  0.4
+
+RemoveOverlapWithTau1s 1
+RemoveOverlapWithTau2s 1
+Tau1MatchingDeltaR  0.4
+Tau2MatchingDeltaR 0.4
+
+RemoveOverlapWithJs 0
+JMatchingDeltaR 0.8
+
+RemoveOverlapWithBs 0
+BJMatchingDeltaR 0.4
+
+Apply2017EEnoiseVeto false
+
+DiscrByDPhiMet 0
+DPhiMetCut 0.0 0.5
+
+DiscrByDphi1 true
+Dphi1CutMet 0.5 999.9
+
+####################################
+          CentralJet
+###################################
+
+PtCut 60.0
+
+ApplyPileupJetID 0
+# WPs: tight = 0, medium = 1, loose = 2 
+PUJetIDCut 0
+FailPUJetID 0
+
+ApplyLooseID 1
+ApplyTightID 0
+ApplyTightLepVetoID 0
+
+RemoveOverlapWithMuon1s 1
+RemoveOverlapWithMuon2s 1
+Muon1MatchingDeltaR 0.4
+Muon2MatchingDeltaR 0.4
+
+RemoveOverlapWithElectron1s 1
+RemoveOverlapWithElectron2s 1
+Electron1MatchingDeltaR 0.4
+Electron2MatchingDeltaR 0.4
+
+RemoveOverlapWithTau1s 1
+RemoveOverlapWithTau2s 1
+Tau1MatchingDeltaR 0.4
+Tau2MatchingDeltaR 0.4
+
+Apply2017EEnoiseVeto false
+
+DiscrByDphi1 true
+Dphi1CutMet 0.5 999.9
+
+####################################
+	 FirstLeadingJet
+###################################
+
+DoDiscrByThisJet 1
+
+EtaCut 0.0 4.7
+PtCut 60.0
+
+ApplyPileupJetID 0
+# WPs: tight = 0, medium = 1, loose = 2 
+PUJetIDCut 0
+FailPUJetID 0
+
+ApplyLooseID 1
+ApplyTightID 0
+ApplyTightLepVetoID 0
+
+RemoveOverlapWithMuon1s 1 
+RemoveOverlapWithMuon2s 1
+Muon1MatchingDeltaR 0.4 
+Muon2MatchingDeltaR 0.4
+
+RemoveOverlapWithElectron1s 1
+RemoveOverlapWithElectron2s 1
+Electron1MatchingDeltaR 0.4
+Electron2MatchingDeltaR 0.4
+
+RemoveOverlapWithTau1s 1
+RemoveOverlapWithTau2s 1
+Tau1MatchingDeltaR 0.4
+Tau2MatchingDeltaR 0.4
+
+Apply2017EEnoiseVeto false
+
+####################################
+	 SecondLeadingJet
+###################################
+
+DoDiscrByThisJet 1
+
+EtaCut 0.0 4.7
+PtCut 60.0
+
+ApplyPileupJetID 0
+# WPs: tight = 0, medium = 1, loose = 2 
+PUJetIDCut 0
+FailPUJetID 0
+
+ApplyLooseID 1
+ApplyTightID 0
+ApplyTightLepVetoID 0
+
+RemoveOverlapWithMuon1s 1
+RemoveOverlapWithMuon2s 1
+Muon1MatchingDeltaR 0.4
+Muon2MatchingDeltaR 0.4
+
+RemoveOverlapWithElectron1s 1
+RemoveOverlapWithElectron2s 1
+Electron1MatchingDeltaR 0.4
+Electron2MatchingDeltaR 0.4
+
+RemoveOverlapWithTau1s 1
+RemoveOverlapWithTau2s 1
+Tau1MatchingDeltaR 0.4
+Tau2MatchingDeltaR 0.4
+
+Apply2017EEnoiseVeto false
+
+###################################
+    	     BJet
+##################################
+
+EtaCut 0.0 2.4
+PtCut 30.0
+
+ApplyLooseID 1
+ApplyTightID 0
+ApplyTightLepVetoID 0
+
+ApplyPileupJetID 0
+# WPs: tight = 0, medium = 1, loose = 2 
+PUJetIDCut 0
+FailPUJetID 0
+
+RemoveOverlapWithMuon1s 1
+RemoveOverlapWithMuon2s 1
+Muon1MatchingDeltaR 0.4
+Muon2MatchingDeltaR 0.4
+
+RemoveOverlapWithElectron1s 1
+RemoveOverlapWithElectron2s 1
+Electron1MatchingDeltaR 0.4
+Electron2MatchingDeltaR 0.4
+
+RemoveOverlapWithTau1s 1
+RemoveOverlapWithTau2s 1
+Tau1MatchingDeltaR 0.4
+Tau2MatchingDeltaR 0.4
+
+Apply2017EEnoiseVeto false
+
+ApplyJetBTaggingCSVv2 0 
+ApplyJetBTaggingDeepCSV 1
+ApplyJetBTaggingDeepFlav 0
+
+# Check info for different working points: https://twiki.cern.ch/twiki/bin/viewauth/CMS/BtagRecommendation
+JetBTaggingWP   medium
+JetBTaggingCut  0.6321
+MatchBToGen     0
+UseBtagSF       1
+RemoveBJetsFromJets 0

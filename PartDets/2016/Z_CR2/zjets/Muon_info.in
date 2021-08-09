@@ -41,7 +41,7 @@ DiscrByMetDphi 0
 MetDphiCut 1.0 3.15
 
 DiscrByMetMt 0
-MetMtCut 50. 100.
+MetMtCut 0. 100.
 
 ////////////////////////////////
              Muon2
@@ -66,4 +66,4 @@ DiscrByMetDphi 0
 MetDphiCut 1.0 3.15
 
 DiscrByMetMt 0
-MetMtCut 50. 100.
+MetMtCut 0. 100.
