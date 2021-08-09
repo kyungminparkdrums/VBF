@@ -15,8 +15,11 @@ python3 run0lep_2018.py /hdfs/store/mc/RunIIAutumn18NanoAODv6/DYJetsToLL_M-50_Tu
 
 '''
 
-partDetDir = '$CMSSW_BASE/src/vbfsusy/PartDets/2018/Z_CR1/'
-configDic = {'PartDet':partDetDir+'zjets', 'year': 2018}
+partDetDir = '$CMSSW_BASE/src/vbfsusy/PartDets/2018/SignalMC/'
+configDic = {'PartDet':partDetDir+'Higgsino/100_75p00_50p00//NoCut/', 'year': 2018}
+
+#partDetDir = '$CMSSW_BASE/src/vbfsusy/PartDets/2018/Z_CR1/'
+#configDic = {'PartDet':partDetDir+'zjets', 'year': 2018}
 
 #partDetDir = '$CMSSW_BASE/src/vbfsusy/PartDets/2018/W_CR1/'
 #configDic = {'PartDet':partDetDir+'wjets', 'year': 2018}

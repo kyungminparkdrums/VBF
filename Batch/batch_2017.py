@@ -5,21 +5,29 @@ import os,sys
 Usage
 
 1. Change options in line 17-18 if necessary
-2. Change options in line 193 if necessary
-2. Change line 22
+2. Change options in line 200 if necessary
+3. Change line 29
 
 Then, simply run
 python3 batch_2017.py
 
 '''
 
-executableCode = '$CMSSW_BASE/src/vbfsusy/RunAnalyzer/run0lep_2017.py'
+executableCode = '$CMSSW_BASE/src/vbfsusy/2017_SignalMC_Runs/Higgsino_NoCut/100_75p00_50p00/run0lep_2017.py'
 runData = False
 runMC = True
+isSignal = True
 
 # set output directory
 hostDir = '/store/scratch/'
-outDir = hostDir + os.environ.get('USER') + '/2017/test/'
+submitscript = '~/cpluostools/hadoopCondorSubmit.py '
+
+hostName = os.environ["HOSTNAME"]
+if hostName.endswith('sdfarm.kr'):
+    hostDir = '/cms_scratch/'
+    submitscript = '~/cpluostools/condorSubmit.py '
+
+outDir = hostDir + os.environ.get('USER') + '/2017/2017_SignalMC_Runs/Higgsino_NoCut/100_75p00_50p00/'
 
 if not os.path.exists(outDir):
     os.makedirs(outDir)
@@ -30,7 +38,10 @@ dataDir = '/data/Run2017'
 dataList = [ 'B', 'C', 'D', 'E', 'F' ]
 
 # MC
-mcDir = '/mc/RunIIFall17NanoAODv6/'
+if isSignal:
+    mcDir = '/mc/RunIIFall17NanoAODv7/'
+else:
+    mcDir = '/mc/RunIIFall17NanoAODv6/'
 
 TTbar = [
     'TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8',
@@ -76,13 +87,13 @@ DiBoson = [
     'WpWpJJ_QCD_TuneCP5_13TeV-madgraph-pythia8',
     'GluGluToWWToENEN_13TeV_MCFM701_pythia8',
     'GluGluToWWToENMN_13TeV_MCFM701_pythia8',
-    'GluGluToWWToENTN_13TeV_MCFM701_pythia8',
     'GluGluToWWToMNEN_13TeV_MCFM701_pythia8',
     'GluGluToWWToMNMN_13TeV_MCFM701_pythia8',
     'GluGluToWWToMNTN_13TeV_MCFM701_pythia8',
     'GluGluToWWToTNEN_13TeV_MCFM701_pythia8',
     'GluGluToWWToTNMN_13TeV_MCFM701_pythia8',
     'GluGluToWWToTNTN_13TeV_MCFM701_pythia8',
+    'GluGluToWWToENTN_13TeV_MCFM701_pythia8',
 
     # WZ
     'WZTo1L1Nu2Q_13TeV_amcatnloFXFX_madspin_pythia8',
@@ -176,22 +187,27 @@ TriBoson = [
     'ZZZ_TuneCP5_13TeV-amcatnlo-pythia8',
 ]
 
+# Signal
+EWKino_Higgsino = [
+    'VBF-EWKino_Higgsino_refMassPoints_TuneCP2_13TeV-madgraph-pythia8',
+]
+
 # Run over data
 for i in dataList:
     dataName = 'SingleMuon_Run2017{}'.format(i)
     dataVersion = 'Nano25Oct2019-v1'    
 
     dataJobDic = {'executedCode':executableCode, 'jobName':dataName, 'outputFile':dataName+'.root', 'inputFile':dataDir+i+'/SingleMuon/NANOAOD/'+dataVersion, 'outputDir':outDir+dataName}
-    runCode = '~/cpluostools/hadoopCondorSubmit.py {jobName} -e {executedCode} -o {outputFile} -d {inputFile} --outputdir {outputDir}'.format(**dataJobDic)
+    runCode = submitscript + '{jobName} -e {executedCode} -o {outputFile} -d {inputFile} --outputdir {outputDir}'.format(**dataJobDic)
 
     if runData == True:
         os.system('mkdir -p {}'.format(outDir+dataName))
         print(runCode)
         os.system(runCode)
 
-
 # Run over MC
-mcList = [ TTbar, SingleTop, ZJets, DiBoson, WJets, QCD, VBS_VBF_DiBoson, WW_ZZ_DoublePartonScattering, VBS_VBF_WorZJets, VBS_VBF_WorZJets, Higgs, TT_X, TriBoson, V_gamma ]
+#mcList = [ TTbar, SingleTop, ZJets, DiBoson, WJets, QCD, VBS_VBF_DiBoson, WW_ZZ_DoublePartonScattering, VBS_VBF_WorZJets, VBS_VBF_WorZJets, Higgs, TT_X, TriBoson, V_gamma ]
+mcList = [ EWKino_Higgsino ]
 
 for samples in mcList:
     for i in samples:
@@ -201,7 +217,7 @@ for samples in mcList:
             mcJobDic['outputFile'] = i.split('_TuneCP5')[0] + '_TuneCP5.root'
         elif '_13TeV' in i:
             mcJobDic['outputFile'] = i.split('_13TeV')[0] + '_13TeV.root'
-        runCode = '~/cpluostools/hadoopCondorSubmit.py {jobName} -e {executedCode} -o {outputFile} -d {inputFile} --outputdir {outputDir}'.format(**mcJobDic)
+        runCode = submitscript + '{jobName} -e {executedCode} -o {outputFile} -d {inputFile} --outputdir {outputDir}'.format(**mcJobDic)
 
         if runMC == True:
             os.system('mkdir -p {}'.format(outDir+i))

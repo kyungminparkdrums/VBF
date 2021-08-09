@@ -15,8 +15,11 @@ python3 run0lep_2016.py /hdfs/store/mc/RunIISummer16NanoAODv6-largeblock/WJetsTo
 
 '''
 
-partDetDir = '$CMSSW_BASE/src/vbfsusy/PartDets/2016/Z_CR2/'
-configDic = {'PartDet':partDetDir+'zjets', 'year': 2016}
+partDetDir = '$CMSSW_BASE/src/vbfsusy/PartDets/2016/SignalMC/'
+configDic = {'PartDet':partDetDir+'WZ/100_90p00/SR/', 'year': 2016}
+
+#partDetDir = '$CMSSW_BASE/src/vbfsusy/PartDets/2016/Z_CR2/'
+#configDic = {'PartDet':partDetDir+'zjets', 'year': 2016}
 
 #partDetDir = '$CMSSW_BASE/src/vbfsusy/PartDets/2016/W_CR2/'
 #configDic = {'PartDet':partDetDir+'wjets', 'year': 2016}
@@ -49,8 +52,8 @@ if configDic['year'] == 2017 and not 'data' in datafile:
     elif '_13TeV' in datafile:
         configDic['outname'] = (datafile.split('/')[4]).split('_13TeV')[0] + '_13TeV.root'
     
-runcode = '$CMSSW_BASE/src/NanoAOD_Analyzer/Analyzer -out {outname} -y {year} -C {PartDet} -in {datafile} '.format(**configDic)
-#runcode = '$CMSSW_BASE/src/Forked/NanoAOD_Analyzer/Analyzer -out {outname} -y {year} -C {PartDet} -in {datafile} '.format(**configDic)
+#runcode = '$CMSSW_BASE/src/NanoAOD_Analyzer/Analyzer -out {outname} -y {year} -C {PartDet} -in {datafile} '.format(**configDic)
+runcode = '$CMSSW_BASE/src/Forked/NanoAOD_Analyzer/Analyzer -out {outname} -y {year} -C {PartDet} -in {datafile} '.format(**configDic)
 
 if len(sys.argv) == 3 and '-t' in sys.argv[2]:
     runcode += ' -t'

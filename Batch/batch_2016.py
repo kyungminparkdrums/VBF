@@ -4,22 +4,30 @@ import os,sys
 '''
 Usage
 
-1. Change options in line 17-18 if necessary
-2. Change options in line 213 if necessary 
-2. Change line 22
+1. Change options in line 17-19 if necessary
+2. Change options in line 235 if necessary 
+3. Change line 30
 
 Then, simply run
 python3 batch_2016.py
 
 '''
 
-executableCode = '$CMSSW_BASE/src/vbfsusy/RunAnalyzer/run0lep_2016.py'
+executableCode = '$CMSSW_BASE/src/vbfsusy/2016_SignalMC_Runs/Higgsino_NoCut/100_75p00_50p00/run0lep_2016.py'
 runData = False
 runMC = True
+isSignal = True
 
 # set output directory
 hostDir = '/store/scratch/'
-outDir = hostDir + os.environ.get('USER') + '/2016/test/'
+submitscript = '~/cpluostools/hadoopCondorSubmit.py ' 
+
+hostName = os.environ["HOSTNAME"]
+if hostName.endswith('sdfarm.kr'):
+    hostDir = '/cms_scratch/'
+    submitscript = '~/cpluostools/condorSubmit.py '
+
+outDir = hostDir + os.environ.get('USER') + '/2016/2016_SignalMC_Runs/Higgsino_NoCut/100_75p00_50p00/'
 
 if not os.path.exists(outDir):
     os.makedirs(outDir)
@@ -30,7 +38,10 @@ dataDir = '/data/Run2016'
 dataList = [ 'B_ver1', 'B_ver2', 'C', 'D', 'E', 'F', 'G', 'H' ]
 
 # MC
-mcDir = '/mc/RunIISummer16NanoAODv6/'
+if isSignal:
+    mcDir = '/mc/RunIISummer16NanoAODv7/'
+else:
+    mcDir = '/mc/RunIISummer16NanoAODv6/'
 
 TTbar = [
     'TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8',
@@ -172,20 +183,45 @@ V_gamma = [
     'ZGTo2LG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8',
 ]
 
-unusedSamples = [ 
-           # HT binned Z NuNu (for signal region)
-#           'ZJetsToNuNu_HT-100To200_13TeV-madgraph',
-#           'ZJetsToNuNu_HT-200To400_13TeV-madgraph',
-#           'ZJetsToNuNu_HT-400To600_13TeV-madgraph',
-#           'ZJetsToNuNu_HT-600To800_13TeV-madgraph',
-#           'ZJetsToNuNu_HT-800To1200_13TeV-madgraph',
-#           'ZJetsToNuNu_HT-1200To2500_13TeV-madgraph',
-#           'ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph',
+ZJetsToNuNu = [
+    # HT binned Z NuNu (for signal region)
+    'ZJetsToNuNu_HT-100To200_13TeV-madgraph',
+    'ZJetsToNuNu_HT-200To400_13TeV-madgraph',
+    'ZJetsToNuNu_HT-400To600_13TeV-madgraph',
+    'ZJetsToNuNu_HT-600To800_13TeV-madgraph',
+    'ZJetsToNuNu_HT-800To1200_13TeV-madgraph',
+    'ZJetsToNuNu_HT-1200To2500_13TeV-madgraph',
+    'ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph',
+]
 
-#           'TT_TuneCUETP8M2T4_13TeV-powheg-pythia8',
-#           'WW_TuneCUETP8M1_13TeV-pythia8', 
-#           'WZ_TuneCUETP8M1_13TeV-pythia8', 
-#           'ZZ_TuneCUETP8M1_13TeV-pythia8' 
+# Signal
+EWKino_Higgsino = [
+    'VBF-EWKino_Higgsino_refMassPoints_TuneCUETP8M1_13TeV-madgraph-pythia8',
+    #'VBF-EWKino_Higgsino_TuneCUETP8M1_13TeV-madgraph-pythia8'
+]
+
+EWKino_StauDominated = [
+    'VBF-EWKino_StauDominated_refMassPoints_TuneCUETP8M1_13TeV-madgraph-pythia8',
+    #'VBF-EWKino_StauDominated_TuneCUETP8M1_13TeV-madgraph-pythia8'
+]
+
+EWKino_DemocraticSlepton_mChargino = [
+    'VBF-EWKino_DemocraticSlepton_mChargino-100to150_TuneCUETP8M1_13TeV-madgraph-pythia8',
+    'VBF-EWKino_DemocraticSlepton_mChargino-175to225_TuneCUETP8M1_13TeV-madgraph-pythia8',
+    'VBF-EWKino_DemocraticSlepton_mChargino-250to300_TuneCUETP8M1_13TeV-madgraph-pythia8',
+    'VBF-EWKino_DemocraticSlepton_mChargino-325to350_TuneCUETP8M1_13TeV-madgraph-pythia8',
+    'VBF-EWKino_DemocraticSlepton_mChargino-375to400_TuneCUETP8M1_13TeV-madgraph-pythia8',
+]
+
+EWKino_WZ = [
+    'VBF-EWKino_WZ_TuneCUETP8M1_13TeV-madgraph-pythia8',
+]
+
+unusedSamples = [ 
+           'TT_TuneCUETP8M2T4_13TeV-powheg-pythia8',
+           'WW_TuneCUETP8M1_13TeV-pythia8', 
+           'WZ_TuneCUETP8M1_13TeV-pythia8', 
+           'ZZ_TuneCUETP8M1_13TeV-pythia8' 
 ]
 
 
@@ -193,16 +229,19 @@ unusedSamples = [
 for i in dataList:
     if i == 'B_ver1':
         dataName = 'SingleMuon_Run2016B'
+        #dataName = 'HTMHT_Run2016B'
         dataVersion = 'Nano25Oct2019_ver1-v1'
     elif i == 'B_ver2':
         dataName = 'SingleMuon_Run2016B'
+        #dataName = 'HTMHT_Run2016B'
         dataVersion = 'Nano25Oct2019_ver2-v1'
     else:
         dataName = 'SingleMuon_Run2016{}'.format(i)
+        #dataName = 'HTMHT_Run2016{}'.format(i)
         dataVersion = 'Nano25Oct2019-v1'    
 
     dataJobDic = {'executedCode':executableCode, 'jobName':dataName, 'outputFile':dataName+'.root', 'inputFile':dataDir+i+'/SingleMuon/NANOAOD/'+dataVersion, 'outputDir':outDir+dataName}
-    runCode = '~/cpluostools/hadoopCondorSubmit.py {jobName} -e {executedCode} -o {outputFile} -d {inputFile} --outputdir {outputDir}'.format(**dataJobDic)
+    runCode = submitscript + '{jobName} -e {executedCode} -o {outputFile} -d {inputFile} --outputdir {outputDir}'.format(**dataJobDic)
     
     if runData == True:
         os.system('mkdir -p {}'.format(outDir+dataName))
@@ -210,12 +249,14 @@ for i in dataList:
         os.system(runCode)
 
 # Run over MC
-mcList = [ TTbar, SingleTop, ZJets, DiBoson, WJets, QCD, VBS_VBF_DiBoson, WW_ZZ_DoublePartonScattering, VBS_VBF_WorZJets, VBS_VBF_WorZJets, Higgs, TT_X, TriBoson, V_gamma ]
+#mcList = [ TTbar, SingleTop, ZJets, DiBoson, WJets, QCD, VBS_VBF_DiBoson, WW_ZZ_DoublePartonScattering, VBS_VBF_WorZJets, VBS_VBF_WorZJets, Higgs, TT_X, TriBoson, V_gamma, ZJetsToNuNu ]  # bkg
+#mcList = [ EWKino_Higgsino, EWKino_StauDominated, EWKino_DemocraticSlepton_mChargino, EWKino_WZ ]  # signal
+mcList = [ EWKino_Higgsino ]
 
 for samples in mcList:
     for i in samples:
         mcJobDic = {'executedCode':executableCode, 'jobName':i, 'outputFile':i+'.root', 'inputFile':mcDir+i, 'outputDir':outDir+i}
-        runCode = '~/cpluostools/hadoopCondorSubmit.py {jobName} -e {executedCode} -o {outputFile} -d {inputFile} --outputdir {outputDir}'.format(**mcJobDic)
+        runCode = submitscript + '{jobName} -e {executedCode} -o {outputFile} -d {inputFile} --outputdir {outputDir}'.format(**mcJobDic)
 
         if runMC == True:
             os.system('mkdir -p {}'.format(outDir+i))
